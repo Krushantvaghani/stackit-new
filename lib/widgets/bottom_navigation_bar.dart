@@ -3,8 +3,8 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:stackit/global/assets/index.dart';
-import 'package:stackit/global/utility/app_notifier.dart';
-import 'package:stackit/global/utility/screen_media.dart';
+import 'package:stackit/utility/app_notifier.dart';
+import 'package:stackit/utility/screen_media.dart';
 import 'package:stackit/theme/app_css.dart';
 import 'package:stackit/theme/app_theme.dart';
 
@@ -40,7 +40,8 @@ class BottomNavigationBar extends StatefulWidget {
   _BottomNavigationBarState createState() => _BottomNavigationBarState();
 }
 
-class _BottomNavigationBarState extends State<BottomNavigationBar> with SingleTickerProviderStateMixin {
+class _BottomNavigationBarState extends State<BottomNavigationBar>
+    with SingleTickerProviderStateMixin {
   ThemeData? themeData;
 
   //Final Variables
@@ -48,7 +49,11 @@ class _BottomNavigationBarState extends State<BottomNavigationBar> with SingleTi
   late List<IconData> activeIcons;
   late List<Widget> screens;
   late List<String> titles;
-  late Color activeColor, color, navigationBackground, splashColor, highlightColor;
+  late Color activeColor,
+      color,
+      navigationBackground,
+      splashColor,
+      highlightColor;
   late int length, initialIndex;
   late double activeIconSize, iconSize;
   late Widget backButton;
@@ -101,7 +106,8 @@ class _BottomNavigationBarState extends State<BottomNavigationBar> with SingleTi
     _currentIndex = initialIndex;
 
     //Mobile Tab Controller
-    _tabController = new TabController(length: length, vsync: this, initialIndex: initialIndex);
+    _tabController = new TabController(
+        length: length, vsync: this, initialIndex: initialIndex);
     _tabController.addListener(_handleTabSelection!);
     _tabController.animation!.addListener(() {
       final aniValue = _tabController.animation!.value;
@@ -127,7 +133,8 @@ class _BottomNavigationBarState extends State<BottomNavigationBar> with SingleTi
           theme: AppTheme.getThemeFromThemeMode(value!.themeMode()),
           home: LayoutBuilder(
             builder: (BuildContext context, BoxConstraints constraints) {
-              if (ScreenMedia.isMinimumSize(ScreenMediaType.XS, currentWidth: constraints.maxWidth)) {
+              if (ScreenMedia.isMinimumSize(ScreenMediaType.XS,
+                  currentWidth: constraints.maxWidth)) {
                 return Container();
               }
               return Container();
@@ -155,7 +162,11 @@ class _BottomNavigationBarState extends State<BottomNavigationBar> with SingleTi
                   titles != null
                       ? Text(
                           titles[i],
-                          style: AppCss.getTextStyle(themeData!.textTheme.caption!, color: activeColor ?? themeData!.colorScheme.primary, fontWeight: 600),
+                          style: AppCss.getTextStyle(
+                              themeData!.textTheme.caption!,
+                              color:
+                                  activeColor ?? themeData!.colorScheme.primary,
+                              fontWeight: 600),
                         )
                       : SizedBox()
                 ],
@@ -245,7 +256,11 @@ class _NavigationRailHeader extends StatelessWidget {
                               opacity: animation.value,
                               child: Text(
                                 'FLUTKIT',
-                                style: AppCss.getTextStyle(themeData!.textTheme.bodyText1!, fontWeight: 700, color: Colors.white, letterSpacing: 0.4),
+                                style: AppCss.getTextStyle(
+                                    themeData!.textTheme.bodyText1!,
+                                    fontWeight: 700,
+                                    color: Colors.white,
+                                    letterSpacing: 0.4),
                               ),
                             ),
                           ),

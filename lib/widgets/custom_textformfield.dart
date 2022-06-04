@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:stackit/global/utility/app_notifier.dart';
+import 'package:stackit/utility/app_notifier.dart';
 
 class CustomTextFormField extends StatelessWidget {
   final TextEditingController? container;

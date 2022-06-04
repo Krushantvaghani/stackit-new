@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
-import 'package:stackit/global/utility/screen_media.dart';
-import 'package:stackit/global/utility/single_grid_item.dart';
+import 'package:stackit/utility/screen_media.dart';
+import 'package:stackit/utility/single_grid_item.dart';
 import 'package:stackit/apps/travel/travel_login_screen.dart';
 
 class HomeScreenList extends StatefulWidget {

@@ -4,8 +4,8 @@
 * */
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:stackit/theme/theme_type.dart';
 
 import 'app_theme_notifier.dart';
 
@@ -60,60 +60,60 @@ class AppTheme {
   //App Bar Text
   static final TextTheme lightAppBarTextTheme = TextTheme(
     headline1: GoogleFonts.ibmPlexSans(
-        textStyle: TextStyle(fontSize: 102, color: Color(0xff495057))),
+        textStyle: const TextStyle(fontSize: 102, color: Color(0xff495057))),
     headline2: GoogleFonts.ibmPlexSans(
-        textStyle: TextStyle(fontSize: 64, color: Color(0xff495057))),
+        textStyle: const TextStyle(fontSize: 64, color: Color(0xff495057))),
     headline3: GoogleFonts.ibmPlexSans(
-        textStyle: TextStyle(fontSize: 51, color: Color(0xff495057))),
+        textStyle: const TextStyle(fontSize: 51, color: Color(0xff495057))),
     headline4: GoogleFonts.ibmPlexSans(
-        textStyle: TextStyle(fontSize: 36, color: Color(0xff495057))),
+        textStyle: const TextStyle(fontSize: 36, color: Color(0xff495057))),
     headline5: GoogleFonts.ibmPlexSans(
-        textStyle: TextStyle(fontSize: 25, color: Color(0xff495057))),
+        textStyle: const TextStyle(fontSize: 25, color: Color(0xff495057))),
     headline6: GoogleFonts.ibmPlexSans(
-        textStyle: TextStyle(fontSize: 18, color: Color(0xff495057))),
+        textStyle: const TextStyle(fontSize: 18, color: Color(0xff495057))),
     subtitle1: GoogleFonts.ibmPlexSans(
-        textStyle: TextStyle(fontSize: 17, color: Color(0xff495057))),
+        textStyle: const TextStyle(fontSize: 17, color: Color(0xff495057))),
     subtitle2: GoogleFonts.ibmPlexSans(
-        textStyle: TextStyle(fontSize: 15, color: Color(0xff495057))),
+        textStyle: const TextStyle(fontSize: 15, color: Color(0xff495057))),
     bodyText1: GoogleFonts.ibmPlexSans(
-        textStyle: TextStyle(fontSize: 16, color: Color(0xff495057))),
+        textStyle: const TextStyle(fontSize: 16, color: Color(0xff495057))),
     bodyText2: GoogleFonts.ibmPlexSans(
-        textStyle: TextStyle(fontSize: 14, color: Color(0xff495057))),
+        textStyle: const TextStyle(fontSize: 14, color: Color(0xff495057))),
     button: GoogleFonts.ibmPlexSans(
-        textStyle: TextStyle(fontSize: 15, color: Color(0xff495057))),
+        textStyle: const TextStyle(fontSize: 15, color: Color(0xff495057))),
     caption: GoogleFonts.ibmPlexSans(
-        textStyle: TextStyle(fontSize: 13, color: Color(0xff495057))),
+        textStyle: const TextStyle(fontSize: 13, color: Color(0xff495057))),
     overline: GoogleFonts.ibmPlexSans(
-        textStyle: TextStyle(fontSize: 11, color: Color(0xff495057))),
+        textStyle: const TextStyle(fontSize: 11, color: Color(0xff495057))),
   );
   //Text Themes
   static final TextTheme lightTextTheme = TextTheme(
     headline1: GoogleFonts.ibmPlexSans(
-        textStyle: TextStyle(fontSize: 102, color: Color(0xff4a4c4f))),
+        textStyle: const TextStyle(fontSize: 102, color: Color(0xff4a4c4f))),
     headline2: GoogleFonts.ibmPlexSans(
-        textStyle: TextStyle(fontSize: 64, color: Color(0xff4a4c4f))),
+        textStyle: const TextStyle(fontSize: 64, color: Color(0xff4a4c4f))),
     headline3: GoogleFonts.ibmPlexSans(
-        textStyle: TextStyle(fontSize: 51, color: Color(0xff4a4c4f))),
+        textStyle: const TextStyle(fontSize: 51, color: Color(0xff4a4c4f))),
     headline4: GoogleFonts.ibmPlexSans(
-        textStyle: TextStyle(fontSize: 36, color: Color(0xff4a4c4f))),
+        textStyle: const TextStyle(fontSize: 36, color: Color(0xff4a4c4f))),
     headline5: GoogleFonts.ibmPlexSans(
-        textStyle: TextStyle(fontSize: 25, color: Color(0xff4a4c4f))),
+        textStyle: const TextStyle(fontSize: 25, color: Color(0xff4a4c4f))),
     headline6: GoogleFonts.ibmPlexSans(
-        textStyle: TextStyle(fontSize: 18, color: Color(0xff4a4c4f))),
+        textStyle: const TextStyle(fontSize: 18, color: Color(0xff4a4c4f))),
     subtitle1: GoogleFonts.ibmPlexSans(
-        textStyle: TextStyle(fontSize: 17, color: Color(0xff4a4c4f))),
+        textStyle: const TextStyle(fontSize: 17, color: Color(0xff4a4c4f))),
     subtitle2: GoogleFonts.ibmPlexSans(
-        textStyle: TextStyle(fontSize: 15, color: Color(0xff4a4c4f))),
+        textStyle: const TextStyle(fontSize: 15, color: Color(0xff4a4c4f))),
     bodyText1: GoogleFonts.ibmPlexSans(
-        textStyle: TextStyle(fontSize: 16, color: Color(0xff4a4c4f))),
+        textStyle: const TextStyle(fontSize: 16, color: Color(0xff4a4c4f))),
     bodyText2: GoogleFonts.ibmPlexSans(
-        textStyle: TextStyle(fontSize: 14, color: Color(0xff4a4c4f))),
+        textStyle: const TextStyle(fontSize: 14, color: Color(0xff4a4c4f))),
     button: GoogleFonts.ibmPlexSans(
-        textStyle: TextStyle(fontSize: 15, color: Color(0xff4a4c4f))),
+        textStyle: const TextStyle(fontSize: 15, color: Color(0xff4a4c4f))),
     caption: GoogleFonts.ibmPlexSans(
-        textStyle: TextStyle(fontSize: 13, color: Color(0xff4a4c4f))),
+        textStyle: const TextStyle(fontSize: 13, color: Color(0xff4a4c4f))),
     overline: GoogleFonts.ibmPlexSans(
-        textStyle: TextStyle(fontSize: 11, color: Color(0xff4a4c4f))),
+        textStyle: const TextStyle(fontSize: 11, color: Color(0xff4a4c4f))),
   );
 
   static ThemeData getThemeFromThemeMode(int themeMode) {
@@ -128,20 +128,20 @@ class AppTheme {
   //Color Themes
   static final ThemeData lightTheme = ThemeData(
     brightness: Brightness.light,
-    primaryColor: Color(0xff1c8c8c),
+    primaryColor: const Color(0xff1c8c8c),
     canvasColor: Colors.transparent,
     backgroundColor: Colors.white,
-    scaffoldBackgroundColor: Color(0xffffffff),
+    scaffoldBackgroundColor: const Color(0xffffffff),
     appBarTheme: AppBarTheme(
-      actionsIconTheme: IconThemeData(
+      actionsIconTheme: const IconThemeData(
         color: Color(0xff495057),
       ),
-      color: Color(0xffffffff),
-      iconTheme: IconThemeData(color: Color(0xff495057), size: 24),
+      color: const Color(0xffffffff),
+      iconTheme: const IconThemeData(color: Color(0xff495057), size: 24),
       toolbarTextStyle: lightAppBarTextTheme.bodyText2,
       titleTextStyle: lightAppBarTextTheme.headline6,
     ),
-    navigationRailTheme: NavigationRailThemeData(
+    navigationRailTheme: const NavigationRailThemeData(
         selectedIconTheme:
             IconThemeData(color: Color(0xff3d63ff), opacity: 1, size: 24),
         unselectedIconTheme:
@@ -150,7 +150,7 @@ class AppTheme {
         elevation: 3,
         selectedLabelTextStyle: TextStyle(color: Color(0xff3d63ff)),
         unselectedLabelTextStyle: TextStyle(color: Color(0xff495057))),
-    colorScheme: ColorScheme.light(
+    colorScheme: const ColorScheme.light(
         primary: Color(0xff1c8c8c),
         onPrimary: Colors.white,
         primaryVariant: Color(0xff0055ff),
@@ -164,9 +164,9 @@ class AppTheme {
       color: Colors.white,
       shadowColor: Colors.black.withOpacity(0.4),
       elevation: 1,
-      margin: EdgeInsets.all(0),
+      margin: const EdgeInsets.all(0),
     ),
-    inputDecorationTheme: InputDecorationTheme(
+    inputDecorationTheme: const InputDecorationTheme(
       hintStyle: TextStyle(fontSize: 15, color: Color(0xaa495057)),
       focusedBorder: OutlineInputBorder(
         borderRadius: BorderRadius.all(Radius.circular(4)),
@@ -181,33 +181,33 @@ class AppTheme {
           borderSide: BorderSide(width: 1, color: Colors.black54)),
     ),
     splashColor: Colors.white.withAlpha(100),
-    iconTheme: IconThemeData(
+    iconTheme: const IconThemeData(
       color: Colors.white,
     ),
     textTheme: lightTextTheme,
     indicatorColor: Colors.white,
-    disabledColor: Color(0xffdcc7ff),
+    disabledColor: const Color(0xffdcc7ff),
     highlightColor: Colors.white,
     floatingActionButtonTheme: FloatingActionButtonThemeData(
-        backgroundColor: Color(0xff3d63ff),
+        backgroundColor: const Color(0xff3d63ff),
         splashColor: Colors.white.withAlpha(100),
         highlightElevation: 8,
         elevation: 4,
-        focusColor: Color(0xff3d63ff),
-        hoverColor: Color(0xff3d63ff),
+        focusColor: const Color(0xff3d63ff),
+        hoverColor: const Color(0xff3d63ff),
         foregroundColor: Colors.white),
-    dividerColor: Color(0xffd1d1d1),
-    errorColor: Color(0xfff0323c),
+    dividerColor: const Color(0xffd1d1d1),
+    errorColor: const Color(0xfff0323c),
     cardColor: Colors.white,
-    accentColor: Color(0xff3d63ff),
+    accentColor: const Color(0xff3d63ff),
     popupMenuTheme: PopupMenuThemeData(
-      color: Color(0xffffffff),
-      textStyle:
-          lightTextTheme.bodyText2!.merge(TextStyle(color: Color(0xff495057))),
+      color: const Color(0xffffffff),
+      textStyle: lightTextTheme.bodyText2!
+          .merge(const TextStyle(color: Color(0xff495057))),
     ),
     bottomAppBarTheme:
-        BottomAppBarTheme(color: Color(0xffffffff), elevation: 2),
-    tabBarTheme: TabBarTheme(
+        const BottomAppBarTheme(color: Color(0xffffffff), elevation: 2),
+    tabBarTheme: const TabBarTheme(
       unselectedLabelColor: Color(0xff495057),
       labelColor: Color(0xff3d63ff),
       indicatorSize: TabBarIndicatorSize.label,
@@ -216,17 +216,17 @@ class AppTheme {
       ),
     ),
     sliderTheme: SliderThemeData(
-      activeTrackColor: Color(0xff3d63ff),
-      inactiveTrackColor: Color(0xff3d63ff).withAlpha(140),
-      trackShape: RoundedRectSliderTrackShape(),
+      activeTrackColor: const Color(0xff3d63ff),
+      inactiveTrackColor: const Color(0xff3d63ff).withAlpha(140),
+      trackShape: const RoundedRectSliderTrackShape(),
       trackHeight: 4.0,
-      thumbColor: Color(0xff3d63ff),
-      thumbShape: RoundSliderThumbShape(enabledThumbRadius: 10.0),
-      overlayShape: RoundSliderOverlayShape(overlayRadius: 24.0),
-      tickMarkShape: RoundSliderTickMarkShape(),
+      thumbColor: const Color(0xff3d63ff),
+      thumbShape: const RoundSliderThumbShape(enabledThumbRadius: 10.0),
+      overlayShape: const RoundSliderOverlayShape(overlayRadius: 24.0),
+      tickMarkShape: const RoundSliderTickMarkShape(),
       inactiveTickMarkColor: Colors.red[100],
-      valueIndicatorShape: PaddleSliderValueIndicatorShape(),
-      valueIndicatorTextStyle: TextStyle(
+      valueIndicatorShape: const PaddleSliderValueIndicatorShape(),
+      valueIndicatorTextStyle: const TextStyle(
         color: Colors.white,
       ),
     ),
@@ -235,11 +235,11 @@ class AppTheme {
   static final ThemeData darkTheme = ThemeData(
       brightness: Brightness.dark,
       canvasColor: Colors.transparent,
-      primaryColor: Color(0xff3d63ff),
-      scaffoldBackgroundColor: Color(0xff1b1b1b),
-      backgroundColor: Color(0xff1b1b1b),
-      appBarTheme: AppBarTheme(backgroundColor: Color(0xff1b1b1b)),
-      colorScheme: ColorScheme.dark(
+      primaryColor: const Color(0xff3d63ff),
+      scaffoldBackgroundColor: const Color(0xff1b1b1b),
+      backgroundColor: const Color(0xff1b1b1b),
+      appBarTheme: const AppBarTheme(backgroundColor: Color(0xff1b1b1b)),
+      colorScheme: const ColorScheme.dark(
         primary: Color(0xff3d63ff),
         primaryVariant: Color(0xff3d63ff),
         secondary: Color(0xff00cc77),
@@ -251,9 +251,9 @@ class AppTheme {
         surface: Color(0xff585e63),
       ),
       indicatorColor: Colors.white,
-      disabledColor: Color(0xffa3a3a3),
+      disabledColor: const Color(0xffa3a3a3),
       highlightColor: Colors.white,
-      inputDecorationTheme: InputDecorationTheme(
+      inputDecorationTheme: const InputDecorationTheme(
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.all(Radius.circular(4)),
           borderSide: BorderSide(width: 1, color: Color(0xff3d63ff)),
@@ -266,21 +266,21 @@ class AppTheme {
             borderRadius: BorderRadius.all(Radius.circular(4)),
             borderSide: BorderSide(width: 1, color: Colors.white70)),
       ),
-      dividerColor: Color(0xff363636),
+      dividerColor: const Color(0xff363636),
       errorColor: Colors.orange,
-      cardColor: Color(0xff282a2b),
+      cardColor: const Color(0xff282a2b),
       splashColor: Colors.white.withAlpha(100),
       floatingActionButtonTheme: FloatingActionButtonThemeData(
-          backgroundColor: Color(0xff3d63ff),
+          backgroundColor: const Color(0xff3d63ff),
           splashColor: Colors.white.withAlpha(100),
           highlightElevation: 8,
           elevation: 4,
-          focusColor: Color(0xff3d63ff),
-          hoverColor: Color(0xff3d63ff),
+          focusColor: const Color(0xff3d63ff),
+          hoverColor: const Color(0xff3d63ff),
           foregroundColor: Colors.white),
       bottomAppBarTheme:
-          BottomAppBarTheme(color: Color(0xff464c52), elevation: 2),
-      tabBarTheme: TabBarTheme(
+          const BottomAppBarTheme(color: Color(0xff464c52), elevation: 2),
+      tabBarTheme: const TabBarTheme(
         unselectedLabelColor: Color(0xff495057),
         labelColor: Color(0xff3d63ff),
         indicatorSize: TabBarIndicatorSize.label,
@@ -289,19 +289,19 @@ class AppTheme {
         ),
       ),
       sliderTheme: SliderThemeData(
-        activeTrackColor: Color(0xff3d63ff),
-        inactiveTrackColor: Color(0xff3d63ff).withAlpha(100),
-        trackShape: RoundedRectSliderTrackShape(),
+        activeTrackColor: const Color(0xff3d63ff),
+        inactiveTrackColor: const Color(0xff3d63ff).withAlpha(100),
+        trackShape: const RoundedRectSliderTrackShape(),
         trackHeight: 4.0,
-        thumbColor: Color(0xff3d63ff),
-        thumbShape: RoundSliderThumbShape(enabledThumbRadius: 10.0),
-        overlayShape: RoundSliderOverlayShape(overlayRadius: 24.0),
-        tickMarkShape: RoundSliderTickMarkShape(),
+        thumbColor: const Color(0xff3d63ff),
+        thumbShape: const RoundSliderThumbShape(enabledThumbRadius: 10.0),
+        overlayShape: const RoundSliderOverlayShape(overlayRadius: 24.0),
+        tickMarkShape: const RoundSliderTickMarkShape(),
         inactiveTickMarkColor: Colors.red[100],
-        valueIndicatorShape: PaddleSliderValueIndicatorShape(),
-        valueIndicatorTextStyle: TextStyle(
+        valueIndicatorShape: const PaddleSliderValueIndicatorShape(),
+        valueIndicatorTextStyle: const TextStyle(
           color: Colors.white,
         ),
       ),
-      cupertinoOverrideTheme: CupertinoThemeData());
+      cupertinoOverrideTheme: const CupertinoThemeData());
 }

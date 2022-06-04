@@ -3,7 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:stackit/homes/homes_screen.dart';
 import 'package:stackit/theme/app_theme.dart';
 
-import 'global/utility/app_notifier.dart';
+import 'utility/app_notifier.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();

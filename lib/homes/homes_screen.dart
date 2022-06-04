@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:provider/provider.dart';
-import 'package:stackit/global/utility/app_notifier.dart';
+import 'package:stackit/utility/app_notifier.dart';
 import 'package:stackit/homes/home_screen_list.dart';
 import 'package:stackit/theme/app_css.dart';
 import 'package:stackit/theme/app_theme.dart';
@@ -71,8 +71,8 @@ class _HomeLayout extends State<HomeLayout> {
                   SafeArea(
                     child: Container(
                       color: theme.scaffoldBackgroundColor,
-                      padding:
-                          EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 16, vertical: 16),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: <Widget>[
@@ -86,7 +86,7 @@ class _HomeLayout extends State<HomeLayout> {
                             height: 16,
                           ),
                           Container(
-                            padding: EdgeInsets.symmetric(
+                            padding: const EdgeInsets.symmetric(
                                 horizontal: 15, vertical: 5),
                             decoration: BoxDecoration(
                               color: theme.colorScheme.primary.withAlpha(40),
@@ -107,7 +107,7 @@ class _HomeLayout extends State<HomeLayout> {
                       ),
                     ),
                   ),
-                  Divider(),
+                  const Divider(),
                   Expanded(
                     /*flex: 5,*/
                     child: Container(

@@ -24,7 +24,6 @@ class _TravelScreenState extends State<TravelScreen>
     });
   }
 
-  // oninitStare method
   @override
   void initState() {
     _tabController = TabController(length: 4, vsync: this, initialIndex: 0);
@@ -51,6 +50,7 @@ class _TravelScreenState extends State<TravelScreen>
     });
   }
 
+  @override
   dispose() {
     super.dispose();
     _tabController!.dispose();
@@ -66,21 +66,21 @@ class _TravelScreenState extends State<TravelScreen>
           home: Scaffold(
             bottomNavigationBar: BottomAppBar(
               elevation: 0,
-              shape: CircularNotchedRectangle(),
+              shape: const CircularNotchedRectangle(),
               child: Container(
                 decoration: BoxDecoration(
                   color: theme.colorScheme.onBackground,
                   boxShadow: [
                     BoxShadow(
                       color: theme.colorScheme.primary,
-                      offset: Offset(0, -3),
+                      offset: const Offset(0, -3),
                     )
                   ],
                 ),
-                padding: EdgeInsets.only(top: 12, bottom: 12),
+                padding: const EdgeInsets.only(top: 12, bottom: 12),
                 child: TabBar(
                   controller: _tabController,
-                  indicator: BoxDecoration(),
+                  indicator: const BoxDecoration(),
                   indicatorSize: TabBarIndicatorSize.tab,
                   indicatorColor: theme.colorScheme.onBackground,
                   tabs: <Widget>[
@@ -94,10 +94,10 @@ class _TravelScreenState extends State<TravelScreen>
                                   color: theme.primaryColor,
                                 ),
                                 Container(
-                                  margin: EdgeInsets.only(top: 4),
+                                  margin: const EdgeInsets.only(top: 4),
                                   decoration: BoxDecoration(
                                       color: theme.primaryColor,
-                                      borderRadius: new BorderRadius.all(
+                                      borderRadius: const BorderRadius.all(
                                           Radius.circular(2.5))),
                                   height: 5,
                                   width: 5,
@@ -106,11 +106,11 @@ class _TravelScreenState extends State<TravelScreen>
                             )
                           : Icon(
                               MdiIcons.storeOutline,
-                              color: theme.primaryColor,
+                              color: theme.backgroundColor,
                             ),
                     ),
                     Container(
-                        margin: EdgeInsets.only(right: 0),
+                        margin: const EdgeInsets.only(right: 0),
                         child: (_currentIndex == 1)
                             ? Column(
                                 mainAxisSize: MainAxisSize.min,
@@ -120,10 +120,10 @@ class _TravelScreenState extends State<TravelScreen>
                                     color: theme.primaryColor,
                                   ),
                                   Container(
-                                    margin: EdgeInsets.only(top: 4),
+                                    margin: const EdgeInsets.only(top: 4),
                                     decoration: BoxDecoration(
                                         color: theme.primaryColor,
-                                        borderRadius: new BorderRadius.all(
+                                        borderRadius: const BorderRadius.all(
                                             Radius.circular(2.5))),
                                     height: 5,
                                     width: 5,
@@ -135,7 +135,7 @@ class _TravelScreenState extends State<TravelScreen>
                                 color: theme.primaryColor,
                               )),
                     Container(
-                        margin: EdgeInsets.only(left: 0),
+                        margin: const EdgeInsets.only(left: 0),
                         child: (_currentIndex == 2)
                             ? Column(
                                 mainAxisSize: MainAxisSize.min,
@@ -145,10 +145,10 @@ class _TravelScreenState extends State<TravelScreen>
                                     color: theme.primaryColor,
                                   ),
                                   Container(
-                                    margin: EdgeInsets.only(top: 4),
+                                    margin: const EdgeInsets.only(top: 4),
                                     decoration: BoxDecoration(
                                         color: theme.primaryColor,
-                                        borderRadius: new BorderRadius.all(
+                                        borderRadius: const BorderRadius.all(
                                             Radius.circular(2.5))),
                                     height: 5,
                                     width: 5,
@@ -172,7 +172,7 @@ class _TravelScreenState extends State<TravelScreen>
                                     margin: const EdgeInsets.only(top: 4),
                                     decoration: BoxDecoration(
                                         color: theme.primaryColor,
-                                        borderRadius: BorderRadius.all(
+                                        borderRadius: const BorderRadius.all(
                                             Radius.circular(2.5))),
                                     height: 5,
                                     width: 5,
@@ -187,24 +187,6 @@ class _TravelScreenState extends State<TravelScreen>
                 ),
               ),
             ),
-            // floatingActionButton: FloatingActionButton(
-            //   onPressed: () {
-            //     Navigator.push(
-            //       context,
-            //       MaterialPageRoute(builder: (context) {
-            //         // return ShoppingCartScreen();
-            //         return Container();
-            //       }),
-            //     );
-            //   },
-            //   child: Icon(
-            //     MdiIcons.cartOutline,
-            //     color: appColor.primary,
-            //   ),
-            //   backgroundColor: appColor.white,
-            // ),
-            // floatingActionButtonLocation:
-            //     FloatingActionButtonLocation.centerDocked,
             body: TabBarView(
               controller: _tabController,
               children: const <Widget>[
@@ -220,55 +202,3 @@ class _TravelScreenState extends State<TravelScreen>
     );
   }
 }
-
-// appBar: AppBar(
-//   automaticallyImplyLeading: false,
-//   elevation: 0,
-//   titleSpacing: 0,
-//   backgroundColor: Colors.transparent,
-//   title: Padding(
-//     padding: const EdgeInsets.fromLTRB(20, 0, 0, 0),
-//     child: Align(
-//       alignment: Alignment.centerLeft,
-//       child: Text(
-//         'Welcome homes',
-//         style: AppCss.getTextStyle(themeData!.textTheme.headline6!,
-//             color: appColor.textPrimary,
-//             fontWeight: 700,
-//             letterSpacing: 0.5),
-//       ),
-//     ),
-//   ),
-//   actions: [
-//     Stack(
-//       children: [
-//         Container(
-//           margin: const EdgeInsets.symmetric(
-//               horizontal: 10, vertical: 10),
-//           width: 36,
-//           height: 36,
-//           decoration: BoxDecoration(
-//               borderRadius: BorderRadius.circular(10),
-//               color: appColor.greyOff),
-//           child: IconButton(
-//               icon: Icon(
-//                 MdiIcons.bellOutline,
-//                 color: appColor.black,
-//                 size: 20,
-//               ),
-//               onPressed: () {}),
-//         ),
-//       ],
-//     ),
-//     SizedBox(width: 5),
-//     Padding(
-//       padding: const EdgeInsets.fromLTRB(0, 0, 20, 0),
-//       child: CircleAvatar(
-//         backgroundImage: AssetImage(
-//           imageAssets.profileImage,
-//         ),
-//         backgroundColor: Colors.transparent,
-//       ),
-//     ),
-//   ],
-// ),
