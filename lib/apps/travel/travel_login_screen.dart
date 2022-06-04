@@ -17,6 +17,7 @@ class TravelLoginScreen extends StatefulWidget {
 class _TravelLoginScreenState extends State<TravelLoginScreen> {
   late ThemeData theme;
   bool _passwordVisible = true;
+  // bool _passwordVisible = true;
 
   @override
   void initState() {
