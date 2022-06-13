@@ -19,11 +19,45 @@ class CustomCard extends StatelessWidget {
   final Color? splashColor;
 
   const CustomCard(
-      {Key? key, required this.child, this.borderRadius, this.padding, this.borderRadiusAll, this.color, this.paddingAll, this.onTap, this.border, this.bordered = false, this.clipBehavior, this.boxShape, this.shadow, this.marginAll, this.margin, this.splashColor, this.width, this.height})
+      {Key? key,
+      required this.child,
+      this.borderRadius,
+      this.padding,
+      this.borderRadiusAll,
+      this.color,
+      this.paddingAll,
+      this.onTap,
+      this.border,
+      this.bordered = false,
+      this.clipBehavior,
+      this.boxShape,
+      this.shadow,
+      this.marginAll,
+      this.margin,
+      this.splashColor,
+      this.width,
+      this.height})
       : super(key: key);
 
   const CustomCard.bordered(
-      {Key? key, required this.child, this.borderRadius, this.padding, this.borderRadiusAll, this.color, this.paddingAll, this.onTap, this.border, this.bordered = true, this.clipBehavior, this.boxShape, this.shadow, this.marginAll, this.margin, this.splashColor, this.width, this.height})
+      {Key? key,
+      required this.child,
+      this.borderRadius,
+      this.padding,
+      this.borderRadiusAll,
+      this.color,
+      this.paddingAll,
+      this.onTap,
+      this.border,
+      this.bordered = true,
+      this.clipBehavior,
+      this.boxShape,
+      this.shadow,
+      this.marginAll,
+      this.margin,
+      this.splashColor,
+      this.width,
+      this.height})
       : super(key: key);
   const CustomCard.rounded(
       {Key? key,
@@ -50,7 +84,10 @@ class CustomCard extends StatelessWidget {
   Widget build(BuildContext context) {
     CustomShadow myShadow = shadow ?? CustomShadow();
     return InkWell(
-      borderRadius: boxShape != BoxShape.circle ? borderRadius ?? BorderRadius.all(Radius.circular(borderRadiusAll ?? 8)) : null,
+      borderRadius: boxShape != BoxShape.circle
+          ? borderRadius ??
+              BorderRadius.all(Radius.circular(borderRadiusAll ?? 8))
+          : null,
       splashColor: splashColor ?? Colors.transparent,
       highlightColor: splashColor ?? Colors.transparent,
       onTap: onTap,
@@ -60,12 +97,19 @@ class CustomCard extends StatelessWidget {
         margin: margin ?? EdgeInsets.all(marginAll ?? 0),
         decoration: BoxDecoration(
           color: color ?? AppTheme.theme.primaryColor,
-          borderRadius: boxShape != BoxShape.circle ? borderRadius ?? BorderRadius.all(Radius.circular(borderRadiusAll ?? 8)) : null,
-          border: bordered ? border ?? Border.all(color: AppTheme.theme.primaryColor, width: 1) : null,
+          borderRadius: boxShape != BoxShape.circle
+              ? borderRadius ??
+                  BorderRadius.all(Radius.circular(borderRadiusAll ?? 8))
+              : null,
+          border: bordered
+              ? border ??
+                  Border.all(color: AppTheme.theme.primaryColor, width: 1)
+              : null,
           shape: boxShape ?? BoxShape.rectangle,
           boxShadow: [
             BoxShadow(
-              color: myShadow.color ?? AppTheme.theme.colorScheme.onTertiary.withAlpha(myShadow.alpha),
+              color: myShadow.color ??
+                  AppTheme.theme.shadowColor.withAlpha(myShadow.alpha),
               spreadRadius: myShadow.spreadRadius,
               blurRadius: myShadow.blurRadius,
               offset: myShadow.offset!,

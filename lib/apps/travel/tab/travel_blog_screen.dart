@@ -5,10 +5,12 @@
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:stackit/global/assets/index.dart';
+import 'package:stackit/assets/index.dart';
 import 'package:stackit/theme/app_css.dart';
 import 'package:stackit/theme/app_theme.dart';
 import 'package:stackit/theme/app_theme_notifier.dart';
+
+import '../../../assets/index.dart';
 
 class TravelBlogScreen extends StatefulWidget {
   const TravelBlogScreen({Key? key}) : super(key: key);

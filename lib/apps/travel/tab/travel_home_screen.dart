@@ -5,10 +5,11 @@
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:stackit/global/assets/index.dart';
+import 'package:stackit/assets/index.dart';
 import 'package:stackit/theme/app_css.dart';
 import 'package:stackit/theme/app_theme.dart';
 import 'package:stackit/theme/app_theme_notifier.dart';
+import 'package:stackit/widgets/custom_card.dart';
 import 'package:stackit/widgets/custom_container.dart';
 import 'package:stackit/widgets/custom_textformfield.dart';
 
@@ -55,6 +56,7 @@ class _TravelHomeScreenState extends State<TravelHomeScreen>
           debugShowCheckedModeBanner: false,
           home: SafeArea(
             child: Scaffold(
+              resizeToAvoidBottomInset: false,
               backgroundColor: AppTheme.theme.backgroundColor,
               appBar: AppBar(
                 titleSpacing: 0,
@@ -67,8 +69,8 @@ class _TravelHomeScreenState extends State<TravelHomeScreen>
                     child: Text(
                       'Travel Camp',
                       style: AppCss.getTextStyle(themeData.textTheme.headline5!,
+                          fontSize: 20,
                           fontWeight: 700,
-                          letterSpacing: -0.3,
                           color: themeData.colorScheme.onBackground),
                     ),
                   ),
@@ -83,179 +85,257 @@ class _TravelHomeScreenState extends State<TravelHomeScreen>
                   ),
                 ],
               ),
-              body: Column(
-                children: [
-                  Container(
-                    margin: Spacing.fromLTRB(20, 15, 20, 15),
-                    child: Row(
-                      mainAxisSize: MainAxisSize.max,
-                      children: [
-                        Expanded(
-                          child: Container(
-                            padding: Spacing.vertical(4),
-                            decoration: BoxDecoration(
-                                color: themeData.colorScheme.onBackground,
-                                border: Border.all(
-                                    color: themeData.colorScheme.onBackground,
-                                    width: 1),
-                                borderRadius:
-                                    const BorderRadius.all(Radius.circular(8))),
-                            child: Row(
-                              children: [
-                                Container(
-                                  margin: Spacing.left(12),
-                                  child: Icon(
-                                    MdiIcons.magnify,
-                                    color: themeData.colorScheme.onBackground
-                                        .withAlpha(200),
-                                    size: ScaleSize.size16,
+              body: SingleChildScrollView(
+                child: Column(
+                  children: [
+                    Container(
+                      margin: Spacing.fromLTRB(20, 15, 20, 15),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.max,
+                        children: [
+                          Expanded(
+                            child: Container(
+                              padding: Spacing.vertical(4),
+                              decoration: BoxDecoration(
+                                  color: themeData.colorScheme.onPrimary,
+                                  border: Border.all(
+                                      color: themeData.colorScheme.primary,
+                                      width: 1),
+                                  borderRadius: const BorderRadius.all(
+                                      Radius.circular(8))),
+                              child: Row(
+                                children: [
+                                  Container(
+                                    margin: Spacing.left(12),
+                                    child: Icon(
+                                      MdiIcons.magnify,
+                                      color: themeData.colorScheme.primary
+                                          .withAlpha(200),
+                                      size: ScaleSize.size16,
+                                    ),
                                   ),
-                                ),
-                                Expanded(
-                                  child: CustomTextFormField(
-                                    padding: 0,
-                                    style: AppCss.getTextStyle(
-                                        themeData.textTheme.bodyText2!,
-                                        color:
-                                            themeData.colorScheme.onBackground,
-                                        fontWeight: 500),
-                                    fillColor:
-                                        themeData.colorScheme.onBackground,
-                                    hintStyle: AppCss.getTextStyle(
-                                        themeData.textTheme.bodyText2!,
-                                        color:
-                                            themeData.colorScheme.onBackground,
-                                        muted: true,
-                                        fontWeight: 600),
-                                    hintText: "Where should we go?",
-                                    border: InputBorder.none,
-                                    isDense: true,
+                                  Expanded(
+                                    child: CustomTextFormField(
+                                      padding: 0,
+                                      style: AppCss.getTextStyle(
+                                          themeData.textTheme.bodyText2!,
+                                          color: themeData.colorScheme.primary,
+                                          fontWeight: 500),
+                                      fillColor:
+                                          themeData.colorScheme.onPrimary,
+                                      hintText: "Where should we go?",
+                                      hintStyle: AppCss.getTextStyle(
+                                          themeData.textTheme.bodyText2!,
+                                          color: themeData
+                                              .colorScheme.onBackground,
+                                          muted: true,
+                                          fontWeight: 700,
+                                          letterSpacing: 0),
+                                      border: InputBorder.none,
+                                      isDense: true,
+                                    ),
                                   ),
-                                ),
-                              ],
+                                ],
+                              ),
                             ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
-                  ),
-                  Padding(
-                    padding: Spacing.fromLTRB(20, 0, 8, 0),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text(
-                          "Popular Categories",
-                          style: AppCss.getTextStyle(
-                            themeData.textTheme.subtitle1!,
-                            fontWeight: 700,
+                    Padding(
+                      padding: Spacing.fromLTRB(20, 0, 8, 0),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            "Popular Categories",
+                            style: AppCss.getTextStyle(
+                              themeData.textTheme.subtitle1!,
+                              fontWeight: 700,
+                            ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
-                  ),
-                  CustomContainer(
-                    padding: const EdgeInsets.all(0),
-                    color: Colors.transparent,
-                    child: SingleChildScrollView(
-                      scrollDirection: Axis.horizontal,
-                      child: Padding(
-                        padding: Spacing.fromLTRB(20, 0, 8, 0),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: [
-                            categoryWidget(
-                              iconData: MdiIcons.airplane,
-                              actionText: "Trips",
-                              index: 0,
-                            ),
-                            categoryWidget(
-                                actionText: "Hotel",
-                                iconData: MdiIcons.cityVariant,
-                                index: 2),
-                            categoryWidget(
-                                actionText: "Food",
-                                iconData: MdiIcons.coffee,
-                                index: 3),
-                            categoryWidget(
-                                actionText: "Transport",
-                                iconData: MdiIcons.rickshaw,
-                                index: 4),
-                            categoryWidget(
-                                actionText: "Allocation",
-                                iconData: MdiIcons.collage,
-                                index: 5),
-                            Container(
-                              margin: Spacing.right(24),
-                              child: categoryWidget(
-                                  actionText: "Train",
-                                  iconData: MdiIcons.train,
-                                  index: 6),
-                            ),
-                          ],
+                    Spacing.height(5),
+                    CustomContainer(
+                      padding: const EdgeInsets.all(0),
+                      color: Colors.transparent,
+                      child: SingleChildScrollView(
+                        scrollDirection: Axis.horizontal,
+                        child: Padding(
+                          padding: Spacing.fromLTRB(20, 0, 8, 0),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              categoryWidget(
+                                iconData: MdiIcons.airplane,
+                                actionText: "Trips",
+                                index: 0,
+                              ),
+                              categoryWidget(
+                                  actionText: "Hotel",
+                                  iconData: MdiIcons.cityVariant,
+                                  index: 2),
+                              categoryWidget(
+                                  actionText: "Food",
+                                  iconData: MdiIcons.coffee,
+                                  index: 3),
+                              categoryWidget(
+                                  actionText: "Transport",
+                                  iconData: MdiIcons.rickshaw,
+                                  index: 4),
+                              categoryWidget(
+                                  actionText: "Allocation",
+                                  iconData: MdiIcons.collage,
+                                  index: 5),
+                              Container(
+                                margin: Spacing.right(24),
+                                child: categoryWidget(
+                                    actionText: "Train",
+                                    iconData: MdiIcons.train,
+                                    index: 6),
+                              ),
+                            ],
+                          ),
                         ),
                       ),
                     ),
-                  ),
-                  Spacing.height(24),
-                  Padding(
-                    padding: Spacing.horizontal(24),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text(
-                          'Recommended',
-                          style: AppCss.getTextStyle(
-                            themeData.textTheme.bodyText2!,
-                            fontWeight: 600,
+                    Spacing.height(24),
+                    Padding(
+                      padding: Spacing.horizontal(24),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            'Recommended',
+                            style: AppCss.getTextStyle(
+                              themeData.textTheme.bodyText2!,
+                              fontWeight: 700,
+                            ),
                           ),
-                        ),
-                        Text(
-                          'More',
-                          style: AppCss.getTextStyle(
-                            themeData.textTheme.bodyText2!,
-                            fontWeight: 600,
-                            muted: true,
+                          Text(
+                            'More',
+                            style: AppCss.getTextStyle(
+                              themeData.textTheme.bodyText2!,
+                              fontWeight: 700,
+                              muted: true,
+                            ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
-                  ),
-                  Spacing.height(16),
-                  SingleChildScrollView(
-                    scrollDirection: Axis.horizontal,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        Container(
-                          margin: Spacing.left(24),
-                          child: travelsPost(
-                              title: "Canada", image: imageAssets.sliderImage1),
-                        ),
-                        Container(
-                          margin: Spacing.left(24),
-                          child: travelsPost(
-                              title: "Flutter Test",
-                              image: imageAssets.sliderImage2),
-                        ),
-                        Container(
-                          margin: Spacing.left(24),
-                          child: travelsPost(
-                              title: "Flutter Test",
-                              image: imageAssets.sliderImage3),
-                        ),
-                        Container(
-                          margin: Spacing.left(24),
-                          child: travelsPost(
-                            title: "Flutter Test",
-                            image: imageAssets.sliderImage4,
-                            iconData: MdiIcons.heart,
+                    Spacing.height(16),
+                    SingleChildScrollView(
+                      scrollDirection: Axis.horizontal,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Container(
+                            margin: Spacing.left(24),
+                            child: travelsPost(
+                                title: "Flutter Test",
+                                image: imageAssets.sliderImage1),
                           ),
-                        ),
-                      ],
+                          Container(
+                            margin: Spacing.left(24),
+                            child: travelsPost(
+                                title: "Flutter Test",
+                                image: imageAssets.sliderImage2),
+                          ),
+                          Container(
+                            margin: Spacing.left(24),
+                            child: travelsPost(
+                                title: "Flutter Test",
+                                image: imageAssets.sliderImage3),
+                          ),
+                          Container(
+                            margin: Spacing.left(24),
+                            child: travelsPost(
+                              title: "Flutter Test",
+                              image: imageAssets.sliderImage4,
+                              iconData: MdiIcons.heart,
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
-                  ),
-                ],
+                    Spacing.height(24),
+                    Padding(
+                      padding: Spacing.horizontal(24),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            'Popular',
+                            style: AppCss.getTextStyle(
+                              themeData.textTheme.bodyText2!,
+                              fontWeight: 700,
+                            ),
+                          ),
+                          Text(
+                            'View all',
+                            style: AppCss.getTextStyle(
+                              themeData.textTheme.bodyText2!,
+                              fontWeight: 700,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    Spacing.height(16),
+                    SingleChildScrollView(
+                      physics: const ClampingScrollPhysics(),
+                      scrollDirection: Axis.horizontal,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Container(
+                            margin: Spacing.left(24),
+                            child: buildSinglePlace(
+                              image: imageAssets.placeImage5,
+                              placesName: "Canada",
+                              placesPrice: "1200 par night",
+                            ),
+                          ),
+                          Container(
+                            margin: Spacing.left(24),
+                            child: buildSinglePlace(
+                              placesName: "Canada",
+                              placesPrice: "1200 par night",
+                              image: imageAssets.placeImage1,
+                            ),
+                          ),
+                          Container(
+                            margin: Spacing.left(24),
+                            child: buildSinglePlace(
+                              placesName: "Canada",
+                              placesPrice: "1200 par night",
+                              image: imageAssets.placeImage3,
+                            ),
+                          ),
+                          Container(
+                            margin: Spacing.left(24),
+                            child: buildSinglePlace(
+                              placesName: "Canada",
+                              placesPrice: "1200 par night",
+                              image: imageAssets.placeImage10,
+                            ),
+                          ),
+                          Container(
+                            margin: Spacing.left(24),
+                            child: buildSinglePlace(
+                              placesName: "Canada",
+                              placesPrice: "1200 par night",
+                              image: imageAssets.placeImage4,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    Spacing.height(24),
+                  ],
+                ),
               ),
             ),
           ),
@@ -296,7 +376,7 @@ class _TravelHomeScreenState extends State<TravelHomeScreen>
                 child: Material(
                   color: isSelected
                       ? themeData.primaryColor
-                      : themeData.colorScheme.onBackground,
+                      : themeData.colorScheme.onBackground.withAlpha(30),
                   child: SizedBox(
                     width: 60,
                     height: 60,
@@ -318,7 +398,9 @@ class _TravelHomeScreenState extends State<TravelHomeScreen>
               actionText,
               style: AppCss.getTextStyle(
                 themeData.textTheme.bodyText2!,
-                fontWeight: 600,
+                fontWeight: 700, letterSpacing: 0,
+                // themeData.textTheme.bodyText2!,
+                // fontWeight: 600,
               ),
             ),
           )
@@ -353,7 +435,7 @@ class _TravelHomeScreenState extends State<TravelHomeScreen>
               child: Text(
                 title,
                 style: AppCss.getTextStyle(themeData.textTheme.subtitle2!,
-                    fontWeight: 600, color: themeData.colorScheme.onBackground),
+                    fontWeight: 600, color: themeData.colorScheme.onPrimary),
               ),
             ),
             Positioned(
@@ -361,7 +443,7 @@ class _TravelHomeScreenState extends State<TravelHomeScreen>
               top: 8,
               child: Container(
                 decoration: BoxDecoration(
-                  color: themeData.colorScheme.onBackground,
+                  color: themeData.colorScheme.onPrimary,
                   borderRadius: const BorderRadius.all(Radius.circular(50)),
                 ),
                 height: 25,
@@ -369,7 +451,7 @@ class _TravelHomeScreenState extends State<TravelHomeScreen>
                 child: Icon(
                   MdiIcons.heartOutline,
                   // color: themeData!.colorScheme.onBackground.withAlpha(160),
-                  color: themeData.colorScheme.primary,
+                  color: themeData.errorColor,
                   size: 15,
                 ),
               ),
@@ -387,5 +469,70 @@ class _TravelHomeScreenState extends State<TravelHomeScreen>
       int? index,
       IconData? iconData}) {
     return Container();
+  }
+
+  Widget buildSinglePlace({
+    required String image,
+    required String placesName,
+    required String placesPrice,
+  }) {
+    return CustomCard(
+      onTap: () {},
+      paddingAll: 0,
+      borderRadiusAll: 16,
+      bordered: false,
+      clipBehavior: Clip.antiAliasWithSaveLayer,
+      child: Container(
+        decoration: BoxDecoration(
+          color: themeData.colorScheme.onPrimary,
+        ),
+        child: Padding(
+          padding: const EdgeInsets.all(16),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              ClipRRect(
+                borderRadius: const BorderRadius.all(
+                  Radius.circular(15),
+                ),
+                child: Image(
+                  image: AssetImage(image),
+                  fit: BoxFit.fitWidth,
+                  width: 300,
+                  height: 180,
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 10),
+                child: Column(
+                  children: <Widget>[
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          placesName,
+                          style: AppCss.getTextStyle(
+                              themeData.textTheme.bodyText1!,
+                              fontWeight: 600,
+                              color: themeData.colorScheme.onBackground),
+                        ),
+                        Text(
+                          placesPrice,
+                          style: AppCss.getTextStyle(
+                              themeData.textTheme.bodyText1!,
+                              fontWeight: 600,
+                              color: themeData.colorScheme.onBackground),
+                        ),
+                      ],
+                    ),
+                    Spacing.height(4),
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
   }
 }

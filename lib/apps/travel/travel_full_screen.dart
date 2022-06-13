@@ -3,6 +3,9 @@ import 'package:provider/provider.dart';
 import 'package:stackit/apps/travel/routes/route_screen_list.dart';
 import 'package:stackit/global/packages/config_package.dart';
 import 'package:stackit/theme/app_theme.dart';
+import 'package:stackit/widgets/custom_container.dart';
+
+import '../../widgets/tab_indicator/tab_indicator.dart';
 
 class TravelScreen extends StatefulWidget {
   const TravelScreen({Key? key}) : super(key: key);
@@ -67,22 +70,24 @@ class _TravelScreenState extends State<TravelScreen>
             bottomNavigationBar: BottomAppBar(
               elevation: 0,
               shape: const CircularNotchedRectangle(),
-              child: Container(
-                decoration: BoxDecoration(
-                  color: theme.colorScheme.onBackground,
-                  boxShadow: [
-                    BoxShadow(
-                      color: theme.colorScheme.primary,
-                      offset: const Offset(0, -3),
-                    )
-                  ],
-                ),
+              child: CustomContainer(
+                color: theme.colorScheme.onPrimary,
+                border: Border(
+                    top: BorderSide(
+                        color: theme.dividerColor,
+                        width: 1,
+                        style: BorderStyle.solid)),
                 padding: const EdgeInsets.only(top: 12, bottom: 12),
                 child: TabBar(
                   controller: _tabController,
-                  indicator: const BoxDecoration(),
+                  indicator: FxTabIndicator(
+                      indicatorColor: theme.colorScheme.primary,
+                      indicatorHeight: 3,
+                      radius: 3,
+                      indicatorStyle: FxTabIndicatorStyle.rectangle,
+                      yOffset: -14),
                   indicatorSize: TabBarIndicatorSize.tab,
-                  indicatorColor: theme.colorScheme.onBackground,
+                  indicatorColor: theme.colorScheme.primary,
                   tabs: <Widget>[
                     Container(
                       child: (_currentIndex == 0)
@@ -96,9 +101,11 @@ class _TravelScreenState extends State<TravelScreen>
                                 Container(
                                   margin: const EdgeInsets.only(top: 4),
                                   decoration: BoxDecoration(
-                                      color: theme.primaryColor,
-                                      borderRadius: const BorderRadius.all(
-                                          Radius.circular(2.5))),
+                                    color: theme.primaryColor,
+                                    borderRadius: const BorderRadius.all(
+                                      Radius.circular(2.5),
+                                    ),
+                                  ),
                                   height: 5,
                                   width: 5,
                                 )
@@ -106,7 +113,7 @@ class _TravelScreenState extends State<TravelScreen>
                             )
                           : Icon(
                               MdiIcons.storeOutline,
-                              color: theme.backgroundColor,
+                              color: theme.colorScheme.onBackground,
                             ),
                     ),
                     Container(
@@ -122,9 +129,11 @@ class _TravelScreenState extends State<TravelScreen>
                                   Container(
                                     margin: const EdgeInsets.only(top: 4),
                                     decoration: BoxDecoration(
-                                        color: theme.primaryColor,
-                                        borderRadius: const BorderRadius.all(
-                                            Radius.circular(2.5))),
+                                      color: theme.primaryColor,
+                                      borderRadius: const BorderRadius.all(
+                                        Radius.circular(2.5),
+                                      ),
+                                    ),
                                     height: 5,
                                     width: 5,
                                   )
@@ -132,7 +141,7 @@ class _TravelScreenState extends State<TravelScreen>
                               )
                             : Icon(
                                 MdiIcons.magnify,
-                                color: theme.primaryColor,
+                                color: theme.colorScheme.onBackground,
                               )),
                     Container(
                         margin: const EdgeInsets.only(left: 0),
@@ -147,9 +156,11 @@ class _TravelScreenState extends State<TravelScreen>
                                   Container(
                                     margin: const EdgeInsets.only(top: 4),
                                     decoration: BoxDecoration(
-                                        color: theme.primaryColor,
-                                        borderRadius: const BorderRadius.all(
-                                            Radius.circular(2.5))),
+                                      color: theme.primaryColor,
+                                      borderRadius: const BorderRadius.all(
+                                        Radius.circular(2.5),
+                                      ),
+                                    ),
                                     height: 5,
                                     width: 5,
                                   )
@@ -157,32 +168,35 @@ class _TravelScreenState extends State<TravelScreen>
                               )
                             : Icon(
                                 MdiIcons.tagOutline,
-                                color: theme.primaryColor,
+                                color: theme.colorScheme.onBackground,
                               )),
                     Container(
-                        child: (_currentIndex == 3)
-                            ? Column(
-                                mainAxisSize: MainAxisSize.min,
-                                children: <Widget>[
-                                  Icon(
-                                    MdiIcons.account,
+                      child: (_currentIndex == 3)
+                          ? Column(
+                              mainAxisSize: MainAxisSize.min,
+                              children: <Widget>[
+                                Icon(
+                                  MdiIcons.account,
+                                  color: theme.primaryColor,
+                                ),
+                                Container(
+                                  margin: const EdgeInsets.only(top: 4),
+                                  decoration: BoxDecoration(
                                     color: theme.primaryColor,
+                                    borderRadius: const BorderRadius.all(
+                                      Radius.circular(2.5),
+                                    ),
                                   ),
-                                  Container(
-                                    margin: const EdgeInsets.only(top: 4),
-                                    decoration: BoxDecoration(
-                                        color: theme.primaryColor,
-                                        borderRadius: const BorderRadius.all(
-                                            Radius.circular(2.5))),
-                                    height: 5,
-                                    width: 5,
-                                  )
-                                ],
-                              )
-                            : Icon(
-                                MdiIcons.accountOutline,
-                                color: theme.primaryColor,
-                              )),
+                                  height: 5,
+                                  width: 5,
+                                )
+                              ],
+                            )
+                          : Icon(
+                              MdiIcons.accountOutline,
+                              color: theme.colorScheme.onBackground,
+                            ),
+                    ),
                   ],
                 ),
               ),

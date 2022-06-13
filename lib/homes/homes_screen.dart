@@ -55,7 +55,7 @@ class _HomeLayout extends State<HomeLayout> {
                 fragmentTitle[_selectedPage],
                 style: AppCss.getTextStyle(
                   theme.textTheme.headline6!,
-                  fontWeight: 600,
+                  fontWeight: 700,
                 ),
               ),
               backgroundColor: theme.backgroundColor,

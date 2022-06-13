@@ -6,7 +6,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_feather_icons/flutter_feather_icons.dart';
 import 'package:provider/provider.dart';
-import 'package:stackit/global/assets/index.dart';
+import 'package:stackit/assets/index.dart';
 import 'package:stackit/global/packages/config_package.dart';
 import 'package:stackit/theme/app_css.dart';
 import 'package:stackit/theme/app_theme.dart';
@@ -20,7 +20,8 @@ class TravelProfileScreen extends StatefulWidget {
   _TravelProfileScreenState createState() => _TravelProfileScreenState();
 }
 
-class _TravelProfileScreenState extends State<TravelProfileScreen> with SingleTickerProviderStateMixin {
+class _TravelProfileScreenState extends State<TravelProfileScreen>
+    with SingleTickerProviderStateMixin {
   late ThemeData theme;
 
   @override
@@ -48,7 +49,11 @@ class _TravelProfileScreenState extends State<TravelProfileScreen> with SingleTi
         Expanded(
           child: Text(
             title,
-            style: AppCss.getTextStyle(theme.textTheme.bodyText2!, fontWeight: 600, color: theme.colorScheme.onBackground, letterSpacing: 0.5, textAlign: TextAlign.left),
+            style: AppCss.getTextStyle(theme.textTheme.bodyText2!,
+                fontWeight: 600,
+                color: theme.colorScheme.onBackground,
+                letterSpacing: 0.5,
+                textAlign: TextAlign.left),
           ),
         ),
         Spacing.width(16),
@@ -81,7 +86,9 @@ class _TravelProfileScreenState extends State<TravelProfileScreen> with SingleTi
                           height: 64,
                           decoration: BoxDecoration(
                             shape: BoxShape.circle,
-                            image: DecorationImage(image: AssetImage(imageAssets.avatar4), fit: BoxFit.fill),
+                            image: DecorationImage(
+                                image: AssetImage(imageAssets.avatar4),
+                                fit: BoxFit.fill),
                           ),
                         ),
                         Container(
@@ -89,8 +96,16 @@ class _TravelProfileScreenState extends State<TravelProfileScreen> with SingleTi
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: <Widget>[
-                              Text("Aesha shah", style: AppCss.getTextStyle(theme.textTheme.subtitle1!, fontWeight: 700, letterSpacing: 0)),
-                              Text("aeshashah@shopy.com", style: AppCss.getTextStyle(theme.textTheme.caption!, fontWeight: 600, letterSpacing: 0.3)),
+                              Text("Aesha shah",
+                                  style: AppCss.getTextStyle(
+                                      theme.textTheme.subtitle1!,
+                                      fontWeight: 700,
+                                      letterSpacing: 0)),
+                              Text("aeshashah@shopy.com",
+                                  style: AppCss.getTextStyle(
+                                      theme.textTheme.caption!,
+                                      fontWeight: 600,
+                                      letterSpacing: 0.3)),
                             ],
                           ),
                         ),
@@ -109,7 +124,8 @@ class _TravelProfileScreenState extends State<TravelProfileScreen> with SingleTi
                   Spacing.height(24),
                   Text(
                     'General',
-                    style: AppCss.getTextStyle(theme.textTheme.subtitle1!, fontWeight: 700),
+                    style: AppCss.getTextStyle(theme.textTheme.subtitle1!,
+                        fontWeight: 700),
                   ),
                   Spacing.height(24),
                   singleRow(title: "Notifications", icon: FeatherIcons.bell),
@@ -128,7 +144,9 @@ class _TravelProfileScreenState extends State<TravelProfileScreen> with SingleTi
                   Spacing.height(8),
                   Divider(),
                   Spacing.height(8),
-                  singleRow(title: "Terms & conditions", icon: FeatherIcons.helpCircle),
+                  singleRow(
+                      title: "Terms & conditions",
+                      icon: FeatherIcons.helpCircle),
                   Spacing.height(8),
                   Divider(),
                   Spacing.height(8),

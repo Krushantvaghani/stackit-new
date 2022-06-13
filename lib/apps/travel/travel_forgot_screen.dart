@@ -28,7 +28,7 @@ class _TravelForgotPasswordState extends State<TravelForgotPassword> {
     return Scaffold(
       appBar: AppBar(
         elevation: 0,
-        backgroundColor: theme.colorScheme.onBackground,
+        backgroundColor: theme.colorScheme.onPrimary,
         leading: IconButton(
           onPressed: () {
             Navigator.pop(context);
@@ -49,7 +49,7 @@ class _TravelForgotPasswordState extends State<TravelForgotPassword> {
           ),
         ),
       ),
-      backgroundColor: theme.colorScheme.onBackground,
+      backgroundColor: theme.colorScheme.onPrimary,
       body: SafeArea(
         child: SingleChildScrollView(
           child: Container(
@@ -95,9 +95,9 @@ class _TravelForgotPasswordState extends State<TravelForgotPassword> {
                       CustomButton(
                         title: "Send Email",
                         style: AppCss.getTextStyle(theme.textTheme.bodyText2!,
-                            fontWeight: 600,
+                            fontWeight: 700,
                             letterSpacing: 0.4,
-                            color: theme.colorScheme.onBackground),
+                            color: theme.colorScheme.background),
                         onTap: () {
                           Navigator.push(
                             context,

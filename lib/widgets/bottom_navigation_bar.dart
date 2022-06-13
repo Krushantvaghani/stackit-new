@@ -2,7 +2,7 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:stackit/global/assets/index.dart';
+import 'package:stackit/assets/index.dart';
 import 'package:stackit/utility/app_notifier.dart';
 import 'package:stackit/utility/screen_media.dart';
 import 'package:stackit/theme/app_css.dart';

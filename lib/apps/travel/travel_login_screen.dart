@@ -123,8 +123,8 @@ class _TravelLoginScreenState extends State<TravelLoginScreen> {
                               style: AppCss.getTextStyle(
                                 theme.textTheme.bodyText2!,
                                 color: theme.primaryColor,
-                                fontWeight: 600,
-                                letterSpacing: 0.2,
+                                fontWeight: 700,
+                                letterSpacing: 0.4,
                               ),
                             ),
                             onTap: () {
@@ -145,7 +145,7 @@ class _TravelLoginScreenState extends State<TravelLoginScreen> {
                             title: "Sign in",
                             style: AppCss.getTextStyle(
                                 theme.textTheme.bodyText2!,
-                                fontWeight: 600,
+                                fontWeight: 700,
                                 letterSpacing: 0.4,
                                 color: theme.colorScheme.background),
                             onTap: () {
@@ -165,9 +165,9 @@ class _TravelLoginScreenState extends State<TravelLoginScreen> {
                             style: AppCss.getTextStyle(
                               theme.textTheme.bodyText2!,
                               color: theme.primaryColor,
-                              fontWeight: 600,
+                              fontWeight: 700,
                               letterSpacing: 0.2,
-                              fontSize: 15,
+                              fontSize: 17,
                             ),
                             children: <TextSpan>[
                               TextSpan(
@@ -175,9 +175,9 @@ class _TravelLoginScreenState extends State<TravelLoginScreen> {
                                 style: AppCss.getTextStyle(
                                   theme.textTheme.bodyText2!,
                                   color: theme.primaryColor,
-                                  fontWeight: 600,
+                                  fontWeight: 700,
                                   letterSpacing: 0.2,
-                                  fontSize: 16,
+                                  fontSize: 17,
                                 ),
                                 recognizer: TapGestureRecognizer()
                                   ..onTap = () {

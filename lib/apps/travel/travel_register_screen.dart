@@ -84,8 +84,19 @@ class _TravelRegisterScreenState extends State<TravelRegisterScreen> {
                               borderRadius: BorderRadius.circular(10)),
                           child: CustomTextFormField(
                             hintText: "User name and email",
-                            prefixIcon: Icon(MdiIcons.email,
-                                color: theme.primaryColor, size: 20),
+                            prefixIcon: Icon(
+                              MdiIcons.email,
+                              color: theme.primaryColor,
+                              size: 20,
+                            ),
+                            hintStyle: AppCss.getTextStyle(
+                              theme.textTheme.bodyText1!,
+                            ),
+                            // style: AppCss.getTextStyle(
+                            //   theme.textTheme.bodyText1!,
+                            //   fontWeight: 600,
+                            //   letterSpacing: 0.2,
+                            // ),
                           ),
                         ),
                         SizedBox(height: 20),
@@ -96,17 +107,16 @@ class _TravelRegisterScreenState extends State<TravelRegisterScreen> {
                             borderRadius: BorderRadius.circular(10),
                           ),
                           child: CustomTextFormField(
-                            style: AppCss.getTextStyle(
-                              theme.textTheme.bodyText1!,
-                              fontWeight: 600,
-                              letterSpacing: 0.2,
-                            ),
+                            // style: AppCss.getTextStyle(
+                            //   theme.textTheme.bodyText1!,
+                            //   fontWeight: 600,
+                            //   letterSpacing: 0.2,
+                            // ),
                             hintStyle: AppCss.getTextStyle(
                               theme.textTheme.bodyText1!,
                             ),
                             hintText: "Password",
                             border: InputBorder.none,
-                            enabledBorder: InputBorder.none,
                             focusedBorder: InputBorder.none,
                             prefixIcon: Icon(
                               MdiIcons.lock,
@@ -133,17 +143,16 @@ class _TravelRegisterScreenState extends State<TravelRegisterScreen> {
                             borderRadius: BorderRadius.circular(10),
                           ),
                           child: CustomTextFormField(
-                            style: AppCss.getTextStyle(
-                              theme.textTheme.bodyText1!,
-                              fontWeight: 600,
-                              letterSpacing: 0.2,
-                            ),
+                            // style: AppCss.getTextStyle(
+                            //   theme.textTheme.bodyText1!,
+                            //   fontWeight: 600,
+                            //   letterSpacing: 0.2,
+                            // ),
                             hintStyle: AppCss.getTextStyle(
                               theme.textTheme.bodyText1!,
                             ),
                             hintText: "Confirm Password",
                             border: InputBorder.none,
-                            enabledBorder: InputBorder.none,
                             focusedBorder: InputBorder.none,
                             prefixIcon: Icon(
                               MdiIcons.lock,
@@ -169,7 +178,7 @@ class _TravelRegisterScreenState extends State<TravelRegisterScreen> {
                             title: "Sign up",
                             style: AppCss.getTextStyle(
                               theme.textTheme.bodyText2!,
-                              fontWeight: 600,
+                              fontWeight: 700,
                               letterSpacing: 0.4,
                               color: theme.colorScheme.background,
                             ),
@@ -190,9 +199,9 @@ class _TravelRegisterScreenState extends State<TravelRegisterScreen> {
                             style: AppCss.getTextStyle(
                               theme.textTheme.bodyText2!,
                               color: theme.primaryColor,
-                              fontWeight: 600,
+                              fontWeight: 700,
                               letterSpacing: 0.2,
-                              fontSize: 15,
+                              fontSize: 17,
                             ),
                             children: <TextSpan>[
                               TextSpan(
@@ -201,8 +210,8 @@ class _TravelRegisterScreenState extends State<TravelRegisterScreen> {
                                     theme.textTheme.bodyText2!,
                                     color: theme.primaryColor,
                                     letterSpacing: 0.2,
-                                    fontSize: 16,
-                                    fontWeight: 600),
+                                    fontSize: 17,
+                                    fontWeight: 700),
                                 recognizer: TapGestureRecognizer()
                                   ..onTap = () {
                                     Navigator.push(
