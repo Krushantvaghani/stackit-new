@@ -161,11 +161,12 @@ class AppTheme {
         background: Color(0xfff3f4f7),
         onBackground: Color(0xff495057)),
     cardTheme: CardTheme(
-      color: Colors.white,
+      color: Color(0xfff0f0f0),
       shadowColor: Colors.black.withOpacity(0.4),
       elevation: 1,
       margin: const EdgeInsets.all(0),
     ),
+    cardColor: Color(0xfff0f0f0),
     inputDecorationTheme: const InputDecorationTheme(
       hintStyle: TextStyle(fontSize: 15, color: Color(0xaa495057)),
       focusedBorder: OutlineInputBorder(
@@ -198,7 +199,6 @@ class AppTheme {
         foregroundColor: Colors.white),
     dividerColor: const Color(0xffd1d1d1),
     errorColor: const Color(0xfff0323c),
-    cardColor: Colors.white,
     accentColor: const Color(0xff3d63ff),
     popupMenuTheme: PopupMenuThemeData(
       color: const Color(0xffffffff),
@@ -268,8 +268,14 @@ class AppTheme {
       ),
       dividerColor: const Color(0xff363636),
       errorColor: Colors.orange,
-      cardColor: const Color(0xff282a2b),
       splashColor: Colors.white.withAlpha(100),
+      cardTheme: CardTheme(
+        color: Color(0xff222327),
+        shadowColor: Colors.black.withOpacity(0.4),
+        elevation: 1,
+        margin: const EdgeInsets.all(0),
+      ),
+      cardColor: Color(0xff222327),
       floatingActionButtonTheme: FloatingActionButtonThemeData(
           backgroundColor: const Color(0xff3d63ff),
           splashColor: Colors.white.withAlpha(100),

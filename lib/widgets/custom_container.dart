@@ -125,7 +125,10 @@ class CustomContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      borderRadius: shape != BoxShape.circle ? borderRadius ?? BorderRadius.all(Radius.circular(borderRadiusAll ?? 8)) : null,
+      borderRadius: shape != BoxShape.circle
+          ? borderRadius ??
+              BorderRadius.all(Radius.circular(borderRadiusAll ?? 8))
+          : null,
       onTap: onTap,
       splashColor: splashColor ?? Colors.transparent,
       highlightColor: splashColor ?? Colors.transparent,
@@ -135,7 +138,16 @@ class CustomContainer extends StatelessWidget {
         alignment: alignment,
         margin: margin ?? EdgeInsets.all(marginAll ?? 0),
         decoration: BoxDecoration(
-            color: color ?? AppTheme.theme.primaryColor, shape: shape, borderRadius: shape == BoxShape.rectangle ? borderRadius ?? BorderRadius.all(Radius.circular(borderRadiusAll ?? 8)) : null, border: bordered ? border ?? Border.all(color: AppTheme.theme.primaryColor, width: 1) : null),
+            color: color ?? AppTheme.theme.cardTheme.color,
+            shape: shape,
+            borderRadius: shape == BoxShape.rectangle
+                ? borderRadius ??
+                    BorderRadius.all(Radius.circular(borderRadiusAll ?? 8))
+                : null,
+            border: bordered
+                ? border ??
+                    Border.all(color: AppTheme.theme.primaryColor, width: 1)
+                : null),
         padding: padding ?? EdgeInsets.all(paddingAll ?? 16),
         clipBehavior: clipBehavior ?? Clip.none,
         child: child,

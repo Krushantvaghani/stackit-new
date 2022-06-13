@@ -96,7 +96,7 @@ class CustomCard extends StatelessWidget {
         height: height,
         margin: margin ?? EdgeInsets.all(marginAll ?? 0),
         decoration: BoxDecoration(
-          color: color ?? AppTheme.theme.primaryColor,
+          color: color ?? AppTheme.theme.cardTheme.color,
           borderRadius: boxShape != BoxShape.circle
               ? borderRadius ??
                   BorderRadius.all(Radius.circular(borderRadiusAll ?? 8))

@@ -58,7 +58,7 @@ class CustomTheme {
     colorInfo: Color(0xffff784b),
     colorWarning: Color(0xffffc837),
     colorSuccess: Color(0xff3cd278),
-    shadowColor: Color(0xffd9d9d9),
+    shadowColor: Color(0xff3cd278),
     onInfo: Color(0xffffffff),
     onSuccess: Color(0xffffffff),
     onWarning: Color(0xffffffff),

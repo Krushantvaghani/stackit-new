@@ -482,56 +482,67 @@ class _TravelHomeScreenState extends State<TravelHomeScreen>
       borderRadiusAll: 16,
       bordered: false,
       clipBehavior: Clip.antiAliasWithSaveLayer,
-      child: Container(
-        decoration: BoxDecoration(
-          color: themeData.colorScheme.onPrimary,
-        ),
-        child: Padding(
-          padding: const EdgeInsets.all(16),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              ClipRRect(
-                borderRadius: const BorderRadius.all(
-                  Radius.circular(15),
-                ),
-                child: Image(
-                  image: AssetImage(image),
-                  fit: BoxFit.fitWidth,
-                  width: 300,
-                  height: 180,
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.symmetric(vertical: 10),
-                child: Column(
-                  children: <Widget>[
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text(
-                          placesName,
-                          style: AppCss.getTextStyle(
-                              themeData.textTheme.bodyText1!,
-                              fontWeight: 600,
-                              color: themeData.colorScheme.onBackground),
-                        ),
-                        Text(
-                          placesPrice,
-                          style: AppCss.getTextStyle(
-                              themeData.textTheme.bodyText1!,
-                              fontWeight: 600,
-                              color: themeData.colorScheme.onBackground),
-                        ),
-                      ],
+      child: Column(
+        children: [
+          ClipRRect(
+            borderRadius: const BorderRadius.all(
+              Radius.circular(15),
+            ),
+            child: Image(
+              image: AssetImage(image),
+              fit: BoxFit.fitWidth,
+              width: 300,
+              height: 180,
+            ),
+          ),
+          CustomContainer(
+            paddingAll: 16,
+            child: Column(
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    Text(
+                      placesName,
+                      style: AppCss.getTextStyle(themeData.textTheme.bodyText1!,
+                          fontWeight: 600,
+                          color: themeData.colorScheme.onBackground),
+                      textAlign: TextAlign.left,
                     ),
-                    Spacing.height(4),
+                    Align(
+                      alignment: Alignment.topLeft,
+                      child: Text(
+                        placesPrice,
+                        style: AppCss.getTextStyle(
+                            themeData.textTheme.bodyText1!,
+                            fontWeight: 600,
+                            color: themeData.colorScheme.onBackground),
+                      ),
+                    ),
                   ],
                 ),
-              ),
-            ],
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      placesName,
+                      style: AppCss.getTextStyle(themeData.textTheme.bodyText1!,
+                          fontWeight: 600,
+                          color: themeData.colorScheme.onBackground),
+                    ),
+                    Text(
+                      placesPrice,
+                      style: AppCss.getTextStyle(themeData.textTheme.bodyText1!,
+                          fontWeight: 600,
+                          color: themeData.colorScheme.onBackground),
+                    ),
+                  ],
+                ),
+                Spacing.height(4),
+              ],
+            ),
           ),
-        ),
+        ],
       ),
     );
   }
