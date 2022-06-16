@@ -3,6 +3,7 @@
 * Version : 1.0.0
 * */
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:stackit/assets/index.dart';
@@ -483,6 +484,7 @@ class _TravelHomeScreenState extends State<TravelHomeScreen>
       bordered: false,
       clipBehavior: Clip.antiAliasWithSaveLayer,
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           ClipRRect(
             borderRadius: const BorderRadius.all(
@@ -498,9 +500,10 @@ class _TravelHomeScreenState extends State<TravelHomeScreen>
           CustomContainer(
             paddingAll: 16,
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
                       placesName,
@@ -518,23 +521,6 @@ class _TravelHomeScreenState extends State<TravelHomeScreen>
                             fontWeight: 600,
                             color: themeData.colorScheme.onBackground),
                       ),
-                    ),
-                  ],
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      placesName,
-                      style: AppCss.getTextStyle(themeData.textTheme.bodyText1!,
-                          fontWeight: 600,
-                          color: themeData.colorScheme.onBackground),
-                    ),
-                    Text(
-                      placesPrice,
-                      style: AppCss.getTextStyle(themeData.textTheme.bodyText1!,
-                          fontWeight: 600,
-                          color: themeData.colorScheme.onBackground),
                     ),
                   ],
                 ),
