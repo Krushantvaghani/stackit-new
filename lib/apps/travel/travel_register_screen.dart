@@ -177,9 +177,8 @@ class _TravelRegisterScreenState extends State<TravelRegisterScreen> {
                           child: CustomButton(
                             title: "Sign up",
                             style: AppCss.getTextStyle(
-                              theme.textTheme.bodyText2!,
-                              fontWeight: 700,
-                              letterSpacing: 0.4,
+                              theme.textTheme.subtitle2!,
+                              fontWeight: 600,
                               color: theme.colorScheme.background,
                             ),
                             onTap: () {
@@ -197,20 +196,16 @@ class _TravelRegisterScreenState extends State<TravelRegisterScreen> {
                           text: TextSpan(
                             text: "Already have account? ",
                             style: AppCss.getTextStyle(
-                              theme.textTheme.bodyText2!,
+                              theme.textTheme.subtitle2!,
                               color: theme.primaryColor,
-                              fontWeight: 700,
-                              letterSpacing: 0.2,
-                              fontSize: 17,
+                              fontWeight: 600,
                             ),
                             children: <TextSpan>[
                               TextSpan(
                                 text: ' Sing in',
                                 style: AppCss.getTextStyle(
-                                    theme.textTheme.bodyText2!,
+                                    theme.textTheme.subtitle2!,
                                     color: theme.primaryColor,
-                                    letterSpacing: 0.2,
-                                    fontSize: 17,
                                     fontWeight: 700),
                                 recognizer: TapGestureRecognizer()
                                   ..onTap = () {

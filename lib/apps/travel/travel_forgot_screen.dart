@@ -94,9 +94,8 @@ class _TravelForgotPasswordState extends State<TravelForgotPassword> {
                       const SizedBox(height: 30),
                       CustomButton(
                         title: "Send Email",
-                        style: AppCss.getTextStyle(theme.textTheme.bodyText2!,
-                            fontWeight: 700,
-                            letterSpacing: 0.4,
+                        style: AppCss.getTextStyle(theme.textTheme.subtitle2!,
+                            fontWeight: 600,
                             color: theme.colorScheme.background),
                         onTap: () {
                           Navigator.push(

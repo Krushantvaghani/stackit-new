@@ -36,9 +36,9 @@ class _TravelProfileScreenState extends State<TravelProfileScreen>
     return Row(
       children: [
         CustomContainer(
-          paddingAll: 8,
-          borderRadiusAll: 4,
-          color: theme.colorScheme.onBackground.withAlpha(20),
+          paddingAll: 10,
+          borderRadiusAll: 10,
+          color: theme.colorScheme.primary.withAlpha(20),
           child: Icon(
             icon,
             color: theme.colorScheme.onBackground,
@@ -75,65 +75,73 @@ class _TravelProfileScreenState extends State<TravelProfileScreen>
           home: SafeArea(
             child: Scaffold(
               body: ListView(
-                padding: const EdgeInsets.all(20),
+                padding: const EdgeInsets.all(24),
                 children: [
-                  Container(
-                    margin: const EdgeInsets.only(top: 16),
-                    child: Row(
-                      children: <Widget>[
-                        Container(
-                          width: 64,
-                          height: 64,
-                          decoration: BoxDecoration(
-                            shape: BoxShape.circle,
-                            image: DecorationImage(
-                                image: AssetImage(imageAssets.avatar4),
-                                fit: BoxFit.fill),
-                          ),
-                        ),
-                        Container(
-                          margin: const EdgeInsets.only(left: 16),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: <Widget>[
-                              Text("Aesha shah",
-                                  style: AppCss.getTextStyle(
-                                      theme.textTheme.subtitle1!,
-                                      fontWeight: 700,
-                                      letterSpacing: 0)),
-                              Text("aeshashah@shopy.com",
-                                  style: AppCss.getTextStyle(
-                                      theme.textTheme.caption!,
-                                      fontWeight: 600,
-                                      letterSpacing: 0.3)),
-                            ],
-                          ),
-                        ),
-                        // Expanded(
-                        //   child: Align(
-                        //     alignment: Alignment.centerRight,
-                        //     child: Icon(
-                        //       MdiIcons.chevronRight,
-                        //       color: themeData!.colorScheme.onBackground,
-                        //     ),
-                        //   ),
-                        // )
-                      ],
-                    ),
-                  ),
-                  Spacing.height(24),
+                  // Container(
+                  //   margin: const EdgeInsets.only(top: 16),
+                  //   child: Row(
+                  //     children: <Widget>[
+                  //       Container(
+                  //         width: 64,
+                  //         height: 64,
+                  //         decoration: BoxDecoration(
+                  //           shape: BoxShape.circle,
+                  //           image: DecorationImage(
+                  //               image: AssetImage(imageAssets.avatar4),
+                  //               fit: BoxFit.fill),
+                  //         ),
+                  //       ),
+                  //       // Container(
+                  //       //   margin: const EdgeInsets.only(left: 16),
+                  //       //   child: Column(
+                  //       //     crossAxisAlignment: CrossAxisAlignment.start,
+                  //       //     children: <Widget>[
+                  //       //       Text("Aesha shah",
+                  //       //           style: AppCss.getTextStyle(
+                  //       //               theme.textTheme.subtitle1!,
+                  //       //               fontWeight: 700,
+                  //       //               letterSpacing: 0)),
+                  //       //       Text("aeshashah@shopy.com",
+                  //       //           style: AppCss.getTextStyle(
+                  //       //               theme.textTheme.caption!,
+                  //       //               fontWeight: 600,
+                  //       //               letterSpacing: 0.3)),
+                  //       //     ],
+                  //       //   ),
+                  //       // ),
+                  //       // // Expanded(
+                  //       // //   child: Align(
+                  //       // //     alignment: Alignment.centerRight,
+                  //       // //     child: Icon(
+                  //       // //       MdiIcons.chevronRight,
+                  //       // //       color: theme.colorScheme.onBackground,
+                  //       // //     ),
+                  //       // //   ),
+                  //       // // )
+                  //     ],
+                  //   ),
+                  // ),
+                  // Spacing.height(24),
                   Text(
-                    'General',
-                    style: AppCss.getTextStyle(theme.textTheme.subtitle1!,
-                        fontWeight: 700),
+                    'Settings',
+                    style: AppCss.getTextStyle(theme.textTheme.headline6!,
+                        fontWeight: 700, fontSize: 23),
                   ),
-                  Spacing.height(24),
+                  Spacing.height(10),
+                  Text(
+                    'View and edit your settings',
+                    style: AppCss.getTextStyle(theme.textTheme.bodyText2!,
+                        fontWeight: 600,
+                        color: AppTheme.theme.colorScheme.onBackground
+                            .withAlpha(90)),
+                  ),
+                  Spacing.height(30),
                   singleRow(title: "Notifications", icon: FeatherIcons.bell),
                   Spacing.height(8),
-                  Divider(),
-                  Spacing.height(8),
-                  singleRow(title: "Edit Profile", icon: FeatherIcons.edit),
-                  Spacing.height(8),
+                  // Divider(),
+                  // Spacing.height(8),
+                  // singleRow(title: "Edit Profile", icon: FeatherIcons.edit),
+                  // Spacing.height(8),
                   Divider(),
                   Spacing.height(8),
                   singleRow(title: "Language", icon: FeatherIcons.globe),
@@ -142,12 +150,12 @@ class _TravelProfileScreenState extends State<TravelProfileScreen>
                   Spacing.height(8),
                   singleRow(title: "Profile setting", icon: FeatherIcons.user),
                   Spacing.height(8),
-                  Divider(),
-                  Spacing.height(8),
-                  singleRow(
-                      title: "Terms & conditions",
-                      icon: FeatherIcons.helpCircle),
-                  Spacing.height(8),
+                  // Divider(),
+                  // Spacing.height(8),
+                  // singleRow(
+                  //     title: "Terms & conditions",
+                  //     icon: FeatherIcons.helpCircle),
+                  // Spacing.height(8),
                   Divider(),
                   Spacing.height(8),
                   singleRow(title: "Privacy policy", icon: FeatherIcons.shield),

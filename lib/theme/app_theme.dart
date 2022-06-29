@@ -59,60 +59,60 @@ class AppTheme {
 
   //App Bar Text
   static final TextTheme lightAppBarTextTheme = TextTheme(
-    headline1: GoogleFonts.ibmPlexSans(
+    headline1: GoogleFonts.openSans(
         textStyle: const TextStyle(fontSize: 102, color: Color(0xff495057))),
-    headline2: GoogleFonts.ibmPlexSans(
+    headline2: GoogleFonts.openSans(
         textStyle: const TextStyle(fontSize: 64, color: Color(0xff495057))),
-    headline3: GoogleFonts.ibmPlexSans(
+    headline3: GoogleFonts.openSans(
         textStyle: const TextStyle(fontSize: 51, color: Color(0xff495057))),
-    headline4: GoogleFonts.ibmPlexSans(
+    headline4: GoogleFonts.openSans(
         textStyle: const TextStyle(fontSize: 36, color: Color(0xff495057))),
-    headline5: GoogleFonts.ibmPlexSans(
+    headline5: GoogleFonts.openSans(
         textStyle: const TextStyle(fontSize: 25, color: Color(0xff495057))),
-    headline6: GoogleFonts.ibmPlexSans(
+    headline6: GoogleFonts.openSans(
         textStyle: const TextStyle(fontSize: 18, color: Color(0xff495057))),
-    subtitle1: GoogleFonts.ibmPlexSans(
+    subtitle1: GoogleFonts.openSans(
         textStyle: const TextStyle(fontSize: 17, color: Color(0xff495057))),
-    subtitle2: GoogleFonts.ibmPlexSans(
+    subtitle2: GoogleFonts.openSans(
         textStyle: const TextStyle(fontSize: 15, color: Color(0xff495057))),
-    bodyText1: GoogleFonts.ibmPlexSans(
+    bodyText1: GoogleFonts.openSans(
         textStyle: const TextStyle(fontSize: 16, color: Color(0xff495057))),
-    bodyText2: GoogleFonts.ibmPlexSans(
+    bodyText2: GoogleFonts.openSans(
         textStyle: const TextStyle(fontSize: 14, color: Color(0xff495057))),
-    button: GoogleFonts.ibmPlexSans(
+    button: GoogleFonts.openSans(
         textStyle: const TextStyle(fontSize: 15, color: Color(0xff495057))),
-    caption: GoogleFonts.ibmPlexSans(
+    caption: GoogleFonts.openSans(
         textStyle: const TextStyle(fontSize: 13, color: Color(0xff495057))),
-    overline: GoogleFonts.ibmPlexSans(
+    overline: GoogleFonts.openSans(
         textStyle: const TextStyle(fontSize: 11, color: Color(0xff495057))),
   );
   //Text Themes
   static final TextTheme lightTextTheme = TextTheme(
-    headline1: GoogleFonts.ibmPlexSans(
+    headline1: GoogleFonts.openSans(
         textStyle: const TextStyle(fontSize: 102, color: Color(0xff4a4c4f))),
-    headline2: GoogleFonts.ibmPlexSans(
+    headline2: GoogleFonts.openSans(
         textStyle: const TextStyle(fontSize: 64, color: Color(0xff4a4c4f))),
-    headline3: GoogleFonts.ibmPlexSans(
+    headline3: GoogleFonts.openSans(
         textStyle: const TextStyle(fontSize: 51, color: Color(0xff4a4c4f))),
-    headline4: GoogleFonts.ibmPlexSans(
+    headline4: GoogleFonts.openSans(
         textStyle: const TextStyle(fontSize: 36, color: Color(0xff4a4c4f))),
-    headline5: GoogleFonts.ibmPlexSans(
+    headline5: GoogleFonts.openSans(
         textStyle: const TextStyle(fontSize: 25, color: Color(0xff4a4c4f))),
-    headline6: GoogleFonts.ibmPlexSans(
+    headline6: GoogleFonts.openSans(
         textStyle: const TextStyle(fontSize: 18, color: Color(0xff4a4c4f))),
-    subtitle1: GoogleFonts.ibmPlexSans(
+    subtitle1: GoogleFonts.openSans(
         textStyle: const TextStyle(fontSize: 17, color: Color(0xff4a4c4f))),
-    subtitle2: GoogleFonts.ibmPlexSans(
+    subtitle2: GoogleFonts.openSans(
         textStyle: const TextStyle(fontSize: 15, color: Color(0xff4a4c4f))),
-    bodyText1: GoogleFonts.ibmPlexSans(
+    bodyText1: GoogleFonts.openSans(
         textStyle: const TextStyle(fontSize: 16, color: Color(0xff4a4c4f))),
-    bodyText2: GoogleFonts.ibmPlexSans(
+    bodyText2: GoogleFonts.openSans(
         textStyle: const TextStyle(fontSize: 14, color: Color(0xff4a4c4f))),
-    button: GoogleFonts.ibmPlexSans(
+    button: GoogleFonts.openSans(
         textStyle: const TextStyle(fontSize: 15, color: Color(0xff4a4c4f))),
-    caption: GoogleFonts.ibmPlexSans(
+    caption: GoogleFonts.openSans(
         textStyle: const TextStyle(fontSize: 13, color: Color(0xff4a4c4f))),
-    overline: GoogleFonts.ibmPlexSans(
+    overline: GoogleFonts.openSans(
         textStyle: const TextStyle(fontSize: 11, color: Color(0xff4a4c4f))),
   );
 

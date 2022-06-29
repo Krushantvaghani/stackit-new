@@ -29,6 +29,7 @@ class _TravelScreenState extends State<TravelScreen>
 
   @override
   void initState() {
+    super.initState();
     _tabController = TabController(length: 4, vsync: this, initialIndex: 0);
     _tabController!.addListener(_handleTabSelection);
     _tabController!.animation!.addListener(() {
@@ -44,7 +45,6 @@ class _TravelScreenState extends State<TravelScreen>
       }
     });
     theme = AppTheme.theme;
-    super.initState();
   }
 
   onTapped(value) {
@@ -95,7 +95,7 @@ class _TravelScreenState extends State<TravelScreen>
                               mainAxisSize: MainAxisSize.min,
                               children: <Widget>[
                                 Icon(
-                                  MdiIcons.store,
+                                  MdiIcons.home,
                                   color: theme.primaryColor,
                                 ),
                                 Container(
@@ -112,7 +112,7 @@ class _TravelScreenState extends State<TravelScreen>
                               ],
                             )
                           : Icon(
-                              MdiIcons.storeOutline,
+                              MdiIcons.homeOutline,
                               color: theme.colorScheme.onBackground,
                             ),
                     ),
@@ -123,7 +123,7 @@ class _TravelScreenState extends State<TravelScreen>
                                 mainAxisSize: MainAxisSize.min,
                                 children: <Widget>[
                                   Icon(
-                                    MdiIcons.magnify,
+                                    MdiIcons.earth,
                                     color: theme.primaryColor,
                                   ),
                                   Container(
@@ -140,7 +140,7 @@ class _TravelScreenState extends State<TravelScreen>
                                 ],
                               )
                             : Icon(
-                                MdiIcons.magnify,
+                                MdiIcons.earth,
                                 color: theme.colorScheme.onBackground,
                               )),
                     Container(
@@ -150,7 +150,7 @@ class _TravelScreenState extends State<TravelScreen>
                                 mainAxisSize: MainAxisSize.min,
                                 children: <Widget>[
                                   Icon(
-                                    MdiIcons.tag,
+                                    MdiIcons.accountGroup,
                                     color: theme.primaryColor,
                                   ),
                                   Container(
@@ -167,7 +167,7 @@ class _TravelScreenState extends State<TravelScreen>
                                 ],
                               )
                             : Icon(
-                                MdiIcons.tagOutline,
+                                MdiIcons.accountGroupOutline,
                                 color: theme.colorScheme.onBackground,
                               )),
                     Container(
@@ -176,7 +176,7 @@ class _TravelScreenState extends State<TravelScreen>
                               mainAxisSize: MainAxisSize.min,
                               children: <Widget>[
                                 Icon(
-                                  MdiIcons.account,
+                                  MdiIcons.cog,
                                   color: theme.primaryColor,
                                 ),
                                 Container(
@@ -193,7 +193,7 @@ class _TravelScreenState extends State<TravelScreen>
                               ],
                             )
                           : Icon(
-                              MdiIcons.accountOutline,
+                              MdiIcons.cogOutline,
                               color: theme.colorScheme.onBackground,
                             ),
                     ),

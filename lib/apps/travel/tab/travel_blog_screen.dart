@@ -42,7 +42,7 @@ class _TravelBlogScreenState extends State<TravelBlogScreen>
                   child: Align(
                     alignment: Alignment.centerLeft,
                     child: Text(
-                      'Welcome homes',
+                      'Social Hub',
                       style: AppCss.getTextStyle(
                           themeData!.textTheme.headline6!,
                           color: AppTheme.theme.primaryColor,

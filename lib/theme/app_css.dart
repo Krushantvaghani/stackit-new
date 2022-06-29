@@ -63,7 +63,7 @@ class AppCss {
           : (muted ? color.withAlpha(200) : color);
     }
 
-    return GoogleFonts.openSans(
+    return GoogleFonts.poppins(
         fontSize: finalFontSize,
         fontWeight: _getFontWeight(fontWeight),
         letterSpacing: letterSpacing,

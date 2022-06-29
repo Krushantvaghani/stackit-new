@@ -121,10 +121,9 @@ class _TravelLoginScreenState extends State<TravelLoginScreen> {
                             child: Text(
                               "Forgot Password",
                               style: AppCss.getTextStyle(
-                                theme.textTheme.bodyText2!,
+                                theme.textTheme.subtitle2!,
                                 color: theme.primaryColor,
-                                fontWeight: 700,
-                                letterSpacing: 0.4,
+                                fontWeight: 600,
                               ),
                             ),
                             onTap: () {
@@ -144,9 +143,8 @@ class _TravelLoginScreenState extends State<TravelLoginScreen> {
                           child: CustomButton(
                             title: "Sign in",
                             style: AppCss.getTextStyle(
-                                theme.textTheme.bodyText2!,
-                                fontWeight: 700,
-                                letterSpacing: 0.4,
+                                theme.textTheme.subtitle2!,
+                                fontWeight: 600,
                                 color: theme.colorScheme.background),
                             onTap: () {
                               Navigator.push(
@@ -161,23 +159,19 @@ class _TravelLoginScreenState extends State<TravelLoginScreen> {
                         const SizedBox(height: 20),
                         RichText(
                           text: TextSpan(
-                            text: "Don't have a account? ",
+                            text: "Don't have a account ? ",
                             style: AppCss.getTextStyle(
-                              theme.textTheme.bodyText2!,
+                              theme.textTheme.subtitle2!,
                               color: theme.primaryColor,
-                              fontWeight: 700,
-                              letterSpacing: 0.2,
-                              fontSize: 17,
+                              fontWeight: 600,
                             ),
                             children: <TextSpan>[
                               TextSpan(
                                 text: ' Sing Up',
                                 style: AppCss.getTextStyle(
-                                  theme.textTheme.bodyText2!,
+                                  theme.textTheme.subtitle2!,
                                   color: theme.primaryColor,
                                   fontWeight: 700,
-                                  letterSpacing: 0.2,
-                                  fontSize: 17,
                                 ),
                                 recognizer: TapGestureRecognizer()
                                   ..onTap = () {

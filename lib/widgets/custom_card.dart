@@ -106,15 +106,15 @@ class CustomCard extends StatelessWidget {
                   Border.all(color: AppTheme.theme.primaryColor, width: 1)
               : null,
           shape: boxShape ?? BoxShape.rectangle,
-          boxShadow: [
-            BoxShadow(
-              color: myShadow.color ??
-                  AppTheme.theme.shadowColor.withAlpha(myShadow.alpha),
-              spreadRadius: myShadow.spreadRadius,
-              blurRadius: myShadow.blurRadius,
-              offset: myShadow.offset!,
-            ),
-          ],
+          // boxShadow: [
+          //   BoxShadow(
+          //     color: myShadow.color ??
+          //         AppTheme.theme.shadowColor.withAlpha(myShadow.alpha),
+          //     spreadRadius: myShadow.spreadRadius,
+          //     blurRadius: myShadow.blurRadius,
+          //     offset: myShadow.offset!,
+          //   ),
+          // ],
         ),
         padding: padding ?? EdgeInsets.all(paddingAll ?? 16),
         clipBehavior: clipBehavior ?? Clip.none,
