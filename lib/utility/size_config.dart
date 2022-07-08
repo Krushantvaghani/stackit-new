@@ -16,7 +16,7 @@ class ScaleSize {
   static double? size4;
   static double? size5;
   static double? size6;
-  static late double? size7;
+  static double? size7;
   static double? size8;
   static double? size10;
   static double? size11;
