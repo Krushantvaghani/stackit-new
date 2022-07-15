@@ -100,12 +100,14 @@ class _TravelHomeScreenState extends State<TravelHomeScreen>
                             child: Container(
                               padding: Spacing.vertical(4),
                               decoration: BoxDecoration(
-                                  color: themeData.colorScheme.onPrimary,
-                                  border: Border.all(
-                                      color: themeData.colorScheme.primary,
-                                      width: 1),
-                                  borderRadius: const BorderRadius.all(
-                                      Radius.circular(8))),
+                                color: themeData.colorScheme.onPrimary,
+                                border: Border.all(
+                                    color: themeData.colorScheme.primary,
+                                    width: 1),
+                                borderRadius: const BorderRadius.all(
+                                  Radius.circular(10),
+                                ),
+                              ),
                               child: Row(
                                 children: [
                                   Container(
@@ -163,6 +165,7 @@ class _TravelHomeScreenState extends State<TravelHomeScreen>
                     ),
                     Spacing.height(5),
                     CustomContainer(
+                      borderRadius: BorderRadius.circular(10),
                       padding: const EdgeInsets.all(0),
                       color: Colors.transparent,
                       child: SingleChildScrollView(
@@ -247,7 +250,7 @@ class _TravelHomeScreenState extends State<TravelHomeScreen>
                           Container(
                             margin: Spacing.left(24),
                             child: nearbyTravelers(
-                              image: ImageAssets().travelerImage1,
+                              image: ImageAssets().travelers1,
                               title: "Michaele Jayde",
                               subTitle: "187 Discoveries",
                               countLike: "2105",
@@ -257,7 +260,7 @@ class _TravelHomeScreenState extends State<TravelHomeScreen>
                           Container(
                             margin: Spacing.left(24),
                             child: nearbyTravelers(
-                              image: ImageAssets().travelerImage2,
+                              image: ImageAssets().travelers2,
                               title: "Erik Padamans",
                               subTitle: "678 Discoveries",
                               countLike: "678",
@@ -267,7 +270,7 @@ class _TravelHomeScreenState extends State<TravelHomeScreen>
                           Container(
                             margin: Spacing.left(24),
                             child: nearbyTravelers(
-                              image: ImageAssets().travelerImage3,
+                              image: ImageAssets().travelers3,
                               title: "Dennis Richhi",
                               subTitle: "204 Discoveries",
                               countLike: "578",
@@ -277,7 +280,7 @@ class _TravelHomeScreenState extends State<TravelHomeScreen>
                           Container(
                             margin: Spacing.left(24),
                             child: nearbyTravelers(
-                              image: ImageAssets().travelerImage4,
+                              image: ImageAssets().travelers4,
                               title: "paul Walker",
                               subTitle: "1450 Discoveries",
                               countLike: "887",
@@ -287,7 +290,7 @@ class _TravelHomeScreenState extends State<TravelHomeScreen>
                           Container(
                             margin: Spacing.fromLTRB(24, 0, 24, 0),
                             child: nearbyTravelers(
-                              image: ImageAssets().travelerImage5,
+                              image: ImageAssets().travelers5,
                               title: "Tyler Retriever",
                               subTitle: "417 Discoveries",
                               countLike: "691",
@@ -336,7 +339,7 @@ class _TravelHomeScreenState extends State<TravelHomeScreen>
                       physics: const ClampingScrollPhysics(),
                       scrollDirection: Axis.vertical,
                       child: Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 24),
+                        padding: const EdgeInsets.symmetric(horizontal: 24),
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
@@ -607,7 +610,6 @@ class _TravelHomeScreenState extends State<TravelHomeScreen>
     String? beauty1,
     String? beauty2,
     String? beauty3,
-    String? likes,
     double? star,
   }) {
     return CustomCard(
