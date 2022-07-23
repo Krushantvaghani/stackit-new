@@ -6,11 +6,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:stackit/apps/travel/travel_details.dart';
 import 'package:stackit/assets/index.dart';
 import 'package:stackit/images.dart';
 import 'package:stackit/theme/app_css.dart';
 import 'package:stackit/theme/app_theme.dart';
 import 'package:stackit/theme/app_theme_notifier.dart';
+import 'package:stackit/utility/generator.dart';
 import 'package:stackit/widgets/custom_card.dart';
 import 'package:stackit/widgets/custom_container.dart';
 import 'package:stackit/widgets/custom_textformfield.dart';
@@ -352,6 +354,7 @@ class _TravelHomeScreenState extends State<TravelHomeScreen>
                                 title: "Forest Waterfalls",
                                 location: "Random Forest, Indonesio",
                                 star: 4.5,
+                                rootContext: context,
                               ),
                             ),
                             Spacing.height(20),
@@ -364,6 +367,7 @@ class _TravelHomeScreenState extends State<TravelHomeScreen>
                                 beauty3: "Peacefull".toUpperCase(),
                                 location: "Avotu iela 104-B",
                                 star: 3.5,
+                                rootContext: context,
                               ),
                             ),
                             Spacing.height(20),
@@ -376,6 +380,7 @@ class _TravelHomeScreenState extends State<TravelHomeScreen>
                                 beauty3: "For Kids".toUpperCase(),
                                 location: "Avotu iela 104-B",
                                 star: 4,
+                                rootContext: context,
                               ),
                             ),
                             Spacing.height(20),
@@ -388,6 +393,7 @@ class _TravelHomeScreenState extends State<TravelHomeScreen>
                                 beauty3: "nature".toUpperCase(),
                                 location: "Slokas lela 34-A",
                                 star: 5,
+                                rootContext: context,
                               ),
                             ),
                             Spacing.height(20),
@@ -400,6 +406,7 @@ class _TravelHomeScreenState extends State<TravelHomeScreen>
                                 beauty3: "adventure".toUpperCase(),
                                 location: "Ontario iela 104-B",
                                 star: 4.75,
+                                rootContext: context,
                               ),
                             ),
                             Spacing.height(20),
@@ -571,7 +578,8 @@ class _TravelHomeScreenState extends State<TravelHomeScreen>
               subTitle!,
               style: AppCss.getTextStyle(themeData.textTheme.bodyText2!,
                   fontWeight: 600,
-                  color: AppTheme.theme.colorScheme.onBackground.withAlpha(90)),
+                  color:
+                      AppTheme.theme.colorScheme.onBackground.withAlpha(150)),
             ),
             Spacing.height(15),
             Row(
@@ -611,9 +619,27 @@ class _TravelHomeScreenState extends State<TravelHomeScreen>
     String? beauty2,
     String? beauty3,
     double? star,
+    BuildContext? rootContext,
   }) {
+    String key = Generator.randomString(10);
     return CustomCard(
-      onTap: () {},
+      onTap: () {
+        Navigator.push(
+          rootContext!,
+          MaterialPageRoute(
+            builder: (context) => TravelDetails(
+              heroTag: key,
+              image: image,
+              title: title,
+              beauty1: beauty1!,
+              beauty3: beauty3!,
+              beauty2: beauty2!,
+              location: location!,
+              star: star!,
+            ),
+          ),
+        );
+      },
       paddingAll: 0,
       borderRadiusAll: 10,
       bordered: false,
@@ -632,8 +658,6 @@ class _TravelHomeScreenState extends State<TravelHomeScreen>
                 child: Image(
                   image: AssetImage(image),
                   fit: BoxFit.fitWidth,
-                  // width: 300,
-                  // height: 200,
                 ),
               ),
               Positioned(
@@ -648,7 +672,6 @@ class _TravelHomeScreenState extends State<TravelHomeScreen>
                   width: 30,
                   child: Icon(
                     MdiIcons.heart,
-                    // color: themeData!.colorScheme.onBackground.withAlpha(160),
                     color: themeData.errorColor,
                     size: 20,
                   ),
@@ -704,10 +727,12 @@ class _TravelHomeScreenState extends State<TravelHomeScreen>
                     Spacing.width(8),
                     Text(
                       location!,
-                      style: AppCss.getTextStyle(themeData.textTheme.bodyText2!,
-                          fontWeight: 600,
-                          color:
-                              themeData.colorScheme.onBackground.withAlpha(90)),
+                      style: AppCss.getTextStyle(
+                        themeData.textTheme.bodyText2!,
+                        fontWeight: 600,
+                        color:
+                            themeData.colorScheme.onBackground.withAlpha(150),
+                      ),
                     ),
                   ],
                 ),

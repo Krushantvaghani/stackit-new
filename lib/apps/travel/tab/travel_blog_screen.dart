@@ -424,7 +424,7 @@ class _TravelBlogScreenState extends State<TravelBlogScreen>
                             themeData.textTheme.bodyText2!,
                             fontWeight: 600,
                             color: AppTheme.theme.colorScheme.onBackground
-                                .withAlpha(90)),
+                                .withAlpha(150)),
                       ),
                     ],
                   ),
@@ -443,7 +443,7 @@ class _TravelBlogScreenState extends State<TravelBlogScreen>
             style: AppCss.getTextStyle(
               themeData.textTheme.bodyText1!,
               fontWeight: 600,
-              color: themeData.colorScheme.onBackground,
+              color: themeData.colorScheme.onBackground.withAlpha(150),
             ),
           ),
           Spacing.height(20),
@@ -511,7 +511,7 @@ class _TravelBlogScreenState extends State<TravelBlogScreen>
                     style: AppCss.getTextStyle(themeData.textTheme.bodyText1!,
                         fontWeight: 600,
                         color:
-                            themeData.colorScheme.onBackground.withAlpha(90)),
+                            themeData.colorScheme.onBackground.withAlpha(150)),
                   ),
                 ],
               ),
@@ -535,7 +535,7 @@ class _TravelBlogScreenState extends State<TravelBlogScreen>
                     style: AppCss.getTextStyle(themeData.textTheme.bodyText1!,
                         fontWeight: 600,
                         color:
-                            themeData.colorScheme.onBackground.withAlpha(90)),
+                            themeData.colorScheme.onBackground.withAlpha(150)),
                   ),
                 ],
               ),

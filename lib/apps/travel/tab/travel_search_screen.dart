@@ -11,6 +11,7 @@ import 'package:stackit/assets/image_assets.dart';
 import 'package:stackit/theme/app_css.dart';
 import 'package:stackit/theme/app_theme.dart';
 import 'package:stackit/theme/app_theme_notifier.dart';
+import 'package:stackit/utility/generator.dart';
 import 'package:stackit/utility/size_config.dart';
 import 'package:stackit/widgets/custom_card.dart';
 import 'package:stackit/widgets/custom_container.dart';
@@ -44,6 +45,8 @@ class _TravelSearchScreenState extends State<TravelSearchScreen>
           debugShowCheckedModeBanner: false,
           home: SafeArea(
             child: Scaffold(
+              resizeToAvoidBottomInset: false,
+              backgroundColor: AppTheme.theme.cardColor,
               body: SingleChildScrollView(
                 child: Column(
                   children: [
@@ -168,6 +171,7 @@ class _TravelSearchScreenState extends State<TravelSearchScreen>
                                 title: "Forest Waterfalls",
                                 location: "Random Forest, Indonesio",
                                 star: 4.5,
+                                rootContext: context,
                               ),
                             ),
                             Spacing.height(20),
@@ -180,6 +184,7 @@ class _TravelSearchScreenState extends State<TravelSearchScreen>
                                 beauty3: "Peacefull".toUpperCase(),
                                 location: "Avotu iela 104-B",
                                 star: 3.5,
+                                rootContext: context,
                               ),
                             ),
                             Spacing.height(20),
@@ -192,6 +197,7 @@ class _TravelSearchScreenState extends State<TravelSearchScreen>
                                 beauty3: "For Kids".toUpperCase(),
                                 location: "Avotu iela 104-B",
                                 star: 4,
+                                rootContext: context,
                               ),
                             ),
                             Spacing.height(20),
@@ -204,6 +210,7 @@ class _TravelSearchScreenState extends State<TravelSearchScreen>
                                 beauty3: "nature".toUpperCase(),
                                 location: "Slokas lela 34-A",
                                 star: 5,
+                                rootContext: context,
                               ),
                             ),
                             Spacing.height(20),
@@ -216,9 +223,20 @@ class _TravelSearchScreenState extends State<TravelSearchScreen>
                                 beauty3: "adventure".toUpperCase(),
                                 location: "Ontario iela 104-B",
                                 star: 4.75,
+                                rootContext: context,
                               ),
                             ),
                             Spacing.height(20),
+                            // TravelListWidget(
+                            //   image: ImageAssets().placeImage4,
+                            //   beauty1: "Water".toUpperCase(),
+                            //   beauty2: "Nature".toUpperCase(),
+                            //   beauty3: "Adventures".toUpperCase(),
+                            //   title: "Forest Waterfalls",
+                            //   location: "Random Forest, Indonesio",
+                            //   star: 4.5,
+                            //   rootContext: context,
+                            // )
                           ],
                         ),
                       ),
@@ -284,11 +302,26 @@ class _TravelSearchScreenState extends State<TravelSearchScreen>
     String? beauty2,
     String? beauty3,
     double? star,
+    BuildContext? rootContext,
   }) {
+    String key = Generator.randomString(10);
     return CustomCard(
       onTap: () {
-        Navigator.of(context, rootNavigator: true)
-            .push(MaterialPageRoute(builder: (context) => TravelDetails()));
+        Navigator.push(
+          rootContext!,
+          MaterialPageRoute(
+            builder: (context) => TravelDetails(
+              heroTag: key,
+              image: image,
+              title: title,
+              beauty1: beauty1!,
+              beauty3: beauty3!,
+              beauty2: beauty2!,
+              location: location!,
+              star: star!,
+            ),
+          ),
+        );
       },
       paddingAll: 0,
       borderRadiusAll: 10,
@@ -379,8 +412,8 @@ class _TravelSearchScreenState extends State<TravelSearchScreen>
                       location!,
                       style: AppCss.getTextStyle(themeData.textTheme.bodyText2!,
                           fontWeight: 600,
-                          color:
-                              themeData.colorScheme.onBackground.withAlpha(90)),
+                          color: themeData.colorScheme.onBackground
+                              .withAlpha(150)),
                     ),
                   ],
                 ),
