@@ -5,17 +5,18 @@
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:stackit/apps/travel/socialars_details.dart';
+import 'package:stackit/apps/travel/travel_details.dart';
+import 'package:stackit/apps/travel/traveler_details.dart';
 import 'package:stackit/assets/image_assets.dart';
-import 'package:stackit/assets/index.dart';
 import 'package:stackit/global/packages/config_package.dart';
 import 'package:stackit/theme/app_css.dart';
 import 'package:stackit/theme/app_theme.dart';
 import 'package:stackit/theme/app_theme_notifier.dart';
+import 'package:stackit/utility/generator.dart';
 import 'package:stackit/widgets/custom_card.dart';
 import 'package:stackit/widgets/custom_container.dart';
 import 'package:stackit/widgets/custom_textformfield.dart';
-
-import '../../../assets/index.dart';
 
 class TravelBlogScreen extends StatefulWidget {
   const TravelBlogScreen({Key? key}) : super(key: key);
@@ -42,7 +43,6 @@ class _TravelBlogScreenState extends State<TravelBlogScreen>
       builder: (BuildContext context, AppThemeNotifier? value, Widget? child) {
         return MaterialApp(
           debugShowCheckedModeBanner: false,
-          // theme: AppTheme.getThemeFromThemeMode(value!.themeMode()),
           home: SafeArea(
             child: Scaffold(
               backgroundColor: AppTheme.theme.cardColor,
@@ -50,7 +50,7 @@ class _TravelBlogScreenState extends State<TravelBlogScreen>
                 automaticallyImplyLeading: false,
                 elevation: 0,
                 titleSpacing: 0,
-                backgroundColor: Colors.white,
+                backgroundColor: AppTheme.theme.cardColor,
                 title: Padding(
                   padding: const EdgeInsets.fromLTRB(20, 0, 0, 0),
                   child: Align(
@@ -69,7 +69,7 @@ class _TravelBlogScreenState extends State<TravelBlogScreen>
                     padding: const EdgeInsets.fromLTRB(0, 0, 20, 0),
                     child: CircleAvatar(
                       backgroundImage: AssetImage(
-                        imageAssets.profileImage,
+                        ImageAssets().profileImage,
                       ),
                       backgroundColor: Colors.transparent,
                     ),
@@ -190,41 +190,46 @@ class _TravelBlogScreenState extends State<TravelBlogScreen>
                         Container(
                           margin: Spacing.left(24),
                           child: discoveriesTravelers(
-                            image: ImageAssets().recommended1,
+                            backgroundImage: ImageAssets().recommended1,
                             title: "Michaele",
-                            imageAvatar: ImageAssets().travelers1,
+                            image: ImageAssets().travelers1,
+                            rootContext: context,
                           ),
                         ),
                         Container(
                           margin: Spacing.left(24),
                           child: discoveriesTravelers(
-                            image: ImageAssets().recommended3,
+                            backgroundImage: ImageAssets().recommended3,
                             title: "Jennifer",
-                            imageAvatar: ImageAssets().travelers2,
+                            image: ImageAssets().travelers2,
+                            rootContext: context,
                           ),
                         ),
                         Container(
                           margin: Spacing.left(24),
                           child: discoveriesTravelers(
-                            image: ImageAssets().recommended8,
+                            backgroundImage: ImageAssets().recommended8,
                             title: "Mike",
-                            imageAvatar: ImageAssets().travelers4,
+                            image: ImageAssets().travelers4,
+                            rootContext: context,
                           ),
                         ),
                         Container(
                           margin: Spacing.left(24),
                           child: discoveriesTravelers(
-                            image: ImageAssets().recommended5,
+                            backgroundImage: ImageAssets().recommended5,
                             title: "Kieran",
-                            imageAvatar: ImageAssets().travelers7,
+                            image: ImageAssets().travelers7,
+                            rootContext: context,
                           ),
                         ),
                         Container(
                           margin: Spacing.fromLTRB(24, 0, 24, 0),
                           child: discoveriesTravelers(
-                            image: ImageAssets().recommended12,
+                            backgroundImage: ImageAssets().recommended12,
                             title: "Johnny",
-                            imageAvatar: ImageAssets().travelers6,
+                            image: ImageAssets().travelers6,
+                            rootContext: context,
                           ),
                         ),
                       ],
@@ -251,6 +256,7 @@ class _TravelBlogScreenState extends State<TravelBlogScreen>
                               sliderImage3: ImageAssets().recommended5,
                               like: "2500 likes",
                               comments: "12 comments",
+                              rootContext: context,
                             ),
                           ),
                           Spacing.height(20),
@@ -266,6 +272,7 @@ class _TravelBlogScreenState extends State<TravelBlogScreen>
                               sliderImage3: ImageAssets().recommended8,
                               like: "3250 likes",
                               comments: "45 comments",
+                              rootContext: context,
                             ),
                           ),
                           Spacing.height(20),
@@ -281,6 +288,7 @@ class _TravelBlogScreenState extends State<TravelBlogScreen>
                               sliderImage3: ImageAssets().recommended10,
                               like: "1500 likes",
                               comments: "87 comments",
+                              rootContext: context,
                             ),
                           ),
                           Spacing.height(20),
@@ -296,6 +304,7 @@ class _TravelBlogScreenState extends State<TravelBlogScreen>
                               sliderImage3: ImageAssets().recommended6,
                               like: "1980 likes",
                               comments: "65 comments",
+                              rootContext: context,
                             ),
                           ),
                           Spacing.height(20),
@@ -311,6 +320,7 @@ class _TravelBlogScreenState extends State<TravelBlogScreen>
                               sliderImage3: ImageAssets().recommended8,
                               like: "2784 likes",
                               comments: "85 comments",
+                              rootContext: context,
                             ),
                           ),
                           Spacing.height(20),
@@ -328,45 +338,62 @@ class _TravelBlogScreenState extends State<TravelBlogScreen>
   }
 
   Widget discoveriesTravelers({
-    required String image,
     required String title,
-    String? imageAvatar,
+    required String image,
+    String? backgroundImage,
+    BuildContext? rootContext,
   }) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children: [
-        Container(
-          padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 15),
-          width: 130,
-          height: 170,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(10),
-            image: DecorationImage(image: AssetImage(image), fit: BoxFit.cover),
+    String key = Generator.randomString(10);
+    return InkWell(
+      onTap: () {
+        Navigator.push(
+          rootContext!,
+          MaterialPageRoute(
+            builder: (context) => TravelerDetails(
+              heroTag: key,
+              image: image,
+              title: title,
+            ),
           ),
-          child: Column(
-            children: [
-              Spacing.height(15),
-              Container(
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(50),
-                  border: Border.all(
-                      color: themeData.colorScheme.onPrimary, width: 2),
+        );
+      },
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Container(
+            padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 15),
+            width: 130,
+            height: 170,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(10),
+              image: DecorationImage(
+                  image: AssetImage(backgroundImage!), fit: BoxFit.cover),
+            ),
+            child: Column(
+              children: [
+                Spacing.height(15),
+                Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(50),
+                    border: Border.all(
+                        color: themeData.colorScheme.onPrimary, width: 2),
+                  ),
+                  child: CircleAvatar(
+                    backgroundImage: AssetImage(image),
+                    maxRadius: 25,
+                  ),
                 ),
-                child: CircleAvatar(
-                  backgroundImage: AssetImage(imageAvatar!),
-                  maxRadius: 25,
+                Spacing.height(40),
+                Text(
+                  title,
+                  style: AppCss.getTextStyle(themeData.textTheme.bodyText1!,
+                      fontWeight: 700, color: themeData.colorScheme.onPrimary),
                 ),
-              ),
-              Spacing.height(40),
-              Text(
-                title,
-                style: AppCss.getTextStyle(themeData.textTheme.bodyText1!,
-                    fontWeight: 700, color: themeData.colorScheme.onPrimary),
-              ),
-            ],
+              ],
+            ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 
@@ -380,9 +407,29 @@ class _TravelBlogScreenState extends State<TravelBlogScreen>
     String? imageAvatar,
     String? like,
     String? comments,
+    BuildContext? rootContext,
   }) {
+    String key = Generator.randomString(10);
     return CustomCard(
-      onTap: () {},
+      onTap: () {
+        Navigator.push(
+          rootContext!,
+          MaterialPageRoute(
+            builder: (context) => SocialarDetails(
+              heroTag: key,
+              imageAvatar: imageAvatar!,
+              title: title,
+              subtitle: subtitle!,
+              time: time!,
+              like: like!,
+              comments: comments!,
+              sliderImage: sliderImage!,
+              sliderImage2: sliderImage2!,
+              sliderImage3: sliderImage3!,
+            ),
+          ),
+        );
+      },
       paddingAll: 15,
       borderRadiusAll: 10,
       bordered: false,

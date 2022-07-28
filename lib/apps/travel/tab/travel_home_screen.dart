@@ -7,6 +7,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:stackit/apps/travel/travel_details.dart';
+import 'package:stackit/apps/travel/traveler_details.dart';
 import 'package:stackit/assets/index.dart';
 import 'package:stackit/images.dart';
 import 'package:stackit/theme/app_css.dart';
@@ -66,7 +67,7 @@ class _TravelHomeScreenState extends State<TravelHomeScreen>
               appBar: AppBar(
                 titleSpacing: 0,
                 elevation: 0,
-                backgroundColor: Colors.white,
+                backgroundColor: AppTheme.theme.cardColor,
                 title: Padding(
                   padding: Spacing.left(24),
                   child: Align(
@@ -84,7 +85,7 @@ class _TravelHomeScreenState extends State<TravelHomeScreen>
                   Container(
                     padding: Spacing.right(24),
                     child: CircleAvatar(
-                      backgroundImage: AssetImage(imageAssets.profileImage),
+                      backgroundImage: AssetImage(ImageAssets().profileImage),
                       backgroundColor: Colors.transparent,
                     ),
                   ),
@@ -257,6 +258,7 @@ class _TravelHomeScreenState extends State<TravelHomeScreen>
                               subTitle: "187 Discoveries",
                               countLike: "2105",
                               likes: "likes",
+                              rootContext: context,
                             ),
                           ),
                           Container(
@@ -267,6 +269,7 @@ class _TravelHomeScreenState extends State<TravelHomeScreen>
                               subTitle: "678 Discoveries",
                               countLike: "678",
                               likes: "likes",
+                              rootContext: context,
                             ),
                           ),
                           Container(
@@ -277,6 +280,7 @@ class _TravelHomeScreenState extends State<TravelHomeScreen>
                               subTitle: "204 Discoveries",
                               countLike: "578",
                               likes: "likes",
+                              rootContext: context,
                             ),
                           ),
                           Container(
@@ -287,6 +291,7 @@ class _TravelHomeScreenState extends State<TravelHomeScreen>
                               subTitle: "1450 Discoveries",
                               countLike: "887",
                               likes: "likes",
+                              rootContext: context,
                             ),
                           ),
                           Container(
@@ -297,6 +302,7 @@ class _TravelHomeScreenState extends State<TravelHomeScreen>
                               subTitle: "417 Discoveries",
                               countLike: "691",
                               likes: "likes",
+                              rootContext: context,
                             ),
                           ),
                         ],
@@ -549,9 +555,22 @@ class _TravelHomeScreenState extends State<TravelHomeScreen>
     String? countLike,
     int? index,
     IconData? iconData,
+    BuildContext? rootContext,
   }) {
+    String key = Generator.randomString(10);
     return CustomCard(
-      onTap: () {},
+      onTap: () {
+        Navigator.push(
+          rootContext!,
+          MaterialPageRoute(
+            builder: (context) => TravelerDetails(
+              heroTag: key,
+              image: image,
+              title: title,
+            ),
+          ),
+        );
+      },
       paddingAll: 0,
       borderRadiusAll: 10,
       bordered: false,

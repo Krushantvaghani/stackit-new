@@ -72,6 +72,11 @@ class _HomeScreenList extends State<HomeScreenList> {
                     navigation: TravelLoginScreen(),
                     title: "Travel",
                   ),
+                  SinglePageItem(
+                    iconData: MdiIcons.movie,
+                    navigation: TravelLoginScreen(),
+                    title: "Movie",
+                  ),
                 ],
               ),
             ],

@@ -24,20 +24,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: AppTheme.theme,
-      // homes: Text('welcome', style: AppCss.getTextStyle(TextStyle()),),
       home: const HomeLayout(),
     );
-    // return Consumer<AppNotifier>(
-    //   builder: (BuildContext? context, AppNotifier? value, Widget? child) {
-    //     return MaterialApp(
-    //       debugShowCheckedModeBanner: false,
-    //       theme: ThemeData(
-    //         primaryColor: appColor.primary,
-    //         scaffoldBackgroundColor: appColor.white,
-    //       ),
-    //       homes: const Index(),
-    //     );
-    //   },
-    // );
   }
 }

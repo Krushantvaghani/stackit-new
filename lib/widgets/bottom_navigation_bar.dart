@@ -2,6 +2,7 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:stackit/assets/image_assets.dart';
 import 'package:stackit/assets/index.dart';
 import 'package:stackit/utility/app_notifier.dart';
 import 'package:stackit/utility/screen_media.dart';
@@ -245,7 +246,7 @@ class _NavigationRailHeader extends StatelessWidget {
                           ),
                           SizedBox(width: 15),
                           Image(
-                            image: AssetImage(imageAssets.brand),
+                            image: AssetImage(ImageAssets().brand),
                             width: 24,
                           ),
                           SizedBox(width: 15),
