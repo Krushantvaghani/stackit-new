@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_feather_icons/flutter_feather_icons.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:provider/provider.dart';
-import 'package:stackit/assets/image_assets.dart';
+import 'package:stackit/images.dart';
 import 'package:stackit/theme/app_css.dart';
 import 'package:stackit/theme/app_theme.dart';
 import 'package:stackit/theme/app_theme_notifier.dart';

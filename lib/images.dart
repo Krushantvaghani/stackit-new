@@ -2,9 +2,8 @@ class ImageAssets {
   // Travels
   final String profileImage = 'assets/images/travels/profile.jpg';
 
-  // Slider Images
-  final String sliderImage6 = 'assets/images/travels/img6.jpg';
-  final String sliderImage7 = 'assets/images/travels/img7.jpg';
+  // Forgot password image
+  final String forgotPassword = 'assets/images/forgotpassword.png';
 
   //---------------------- Travel explorer ------------------------------------//
 
@@ -20,6 +19,21 @@ class ImageAssets {
   final String travelers9 = 'assets/images/travels/travelers/09.jpg';
   final String travelers10 = 'assets/images/travels/travelers/10.jpg';
 
+  // recommended
+  final String recommended1 = 'assets/images/travels/recommended/image1.jpg';
+  final String recommended2 = 'assets/images/travels/recommended/image2.jpg';
+  final String recommended3 = 'assets/images/travels/recommended/image3.jpg';
+  final String recommended4 = 'assets/images/travels/recommended/image4.jpg';
+  final String recommended5 = 'assets/images/travels/recommended/image5.jpg';
+  final String recommended6 = 'assets/images/travels/recommended/image6.jpg';
+  final String recommended7 = 'assets/images/travels/recommended/image7.jpg';
+  final String recommended8 = 'assets/images/travels/recommended/image8.jpg';
+  final String recommended9 = 'assets/images/travels/recommended/image9.jpg';
+  final String recommended10 = 'assets/images/travels/recommended/image10.jpg';
+  final String recommended11 = 'assets/images/travels/recommended/image11.jpg';
+  final String recommended12 = 'assets/images/travels/recommended/image12.jpg';
+  final String recommended13 = 'assets/images/travels/recommended/image13.jpg';
+
   final String placeImage1 = 'assets/images/travels/places/image1.jpg';
   final String placeImage2 = 'assets/images/travels/places/image2.jpg';
   final String placeImage3 = 'assets/images/travels/places/image3.jpg';
@@ -32,5 +46,5 @@ class ImageAssets {
   final String placeImage10 = 'assets/images/travels/places/image10.jpg';
 
   // Brands
-  final String brand = 'assets/images/brand/flutter.png';
+  final String brand = 'assets/images/brand/stackit_icon.png';
 }

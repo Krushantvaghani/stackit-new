@@ -6,9 +6,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:stackit/apps/travel/socialars_details.dart';
-import 'package:stackit/apps/travel/travel_details.dart';
 import 'package:stackit/apps/travel/traveler_details.dart';
-import 'package:stackit/assets/image_assets.dart';
+import 'package:stackit/images.dart';
 import 'package:stackit/global/packages/config_package.dart';
 import 'package:stackit/theme/app_css.dart';
 import 'package:stackit/theme/app_theme.dart';
@@ -79,7 +78,7 @@ class _TravelBlogScreenState extends State<TravelBlogScreen>
               body: SingleChildScrollView(
                 child: Column(children: [
                   Container(
-                    margin: Spacing.fromLTRB(24, 15, 24, 15),
+                    margin: Spacing.fromLTRB(24, 20, 24, 20),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       children: [
@@ -147,7 +146,7 @@ class _TravelBlogScreenState extends State<TravelBlogScreen>
                       ],
                     ),
                   ),
-                  Spacing.height(10),
+                  // Spacing.height(10),
                   Padding(
                     padding: Spacing.horizontal(24),
                     child: Row(

@@ -2,8 +2,7 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:stackit/assets/image_assets.dart';
-import 'package:stackit/assets/index.dart';
+import 'package:stackit/images.dart';
 import 'package:stackit/utility/app_notifier.dart';
 import 'package:stackit/utility/screen_media.dart';
 import 'package:stackit/theme/app_css.dart';
@@ -109,7 +108,7 @@ class _BottomNavigationBarState extends State<BottomNavigationBar>
     //Mobile Tab Controller
     _tabController = new TabController(
         length: length, vsync: this, initialIndex: initialIndex);
-    _tabController.addListener(_handleTabSelection!);
+    _tabController.addListener(_handleTabSelection);
     _tabController.animation!.addListener(() {
       final aniValue = _tabController.animation!.value;
       if (aniValue - _currentIndex > 0.5) {
@@ -258,7 +257,7 @@ class _NavigationRailHeader extends StatelessWidget {
                               child: Text(
                                 'FLUTKIT',
                                 style: AppCss.getTextStyle(
-                                    themeData!.textTheme.bodyText1!,
+                                    themeData.textTheme.bodyText1!,
                                     fontWeight: 700,
                                     color: Colors.white,
                                     letterSpacing: 0.4),

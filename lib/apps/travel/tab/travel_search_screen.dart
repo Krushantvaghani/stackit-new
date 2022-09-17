@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:provider/provider.dart';
 import 'package:stackit/apps/travel/travel_details.dart';
-import 'package:stackit/assets/image_assets.dart';
+import 'package:stackit/images.dart';
 import 'package:stackit/theme/app_css.dart';
 import 'package:stackit/theme/app_theme.dart';
 import 'package:stackit/theme/app_theme_notifier.dart';
@@ -51,7 +51,7 @@ class _TravelSearchScreenState extends State<TravelSearchScreen>
                 child: Column(
                   children: [
                     Container(
-                      margin: Spacing.all(24),
+                      margin: Spacing.fromLTRB(24, 20, 24, 20),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         children: [
@@ -106,7 +106,7 @@ class _TravelSearchScreenState extends State<TravelSearchScreen>
                         ],
                       ),
                     ),
-                    Spacing.height(10),
+                    // Spacing.height(10),
                     SingleChildScrollView(
                       scrollDirection: Axis.horizontal,
                       child: Padding(
@@ -137,7 +137,7 @@ class _TravelSearchScreenState extends State<TravelSearchScreen>
                         ),
                       ),
                     ),
-                    Spacing.height(40),
+                    Spacing.height(20),
                     Padding(
                       padding: Spacing.horizontal(24),
                       child: Row(
@@ -153,7 +153,7 @@ class _TravelSearchScreenState extends State<TravelSearchScreen>
                         ],
                       ),
                     ),
-                    Spacing.height(40),
+                    Spacing.height(20),
                     SingleChildScrollView(
                       physics: const ClampingScrollPhysics(),
                       scrollDirection: Axis.vertical,
@@ -227,16 +227,6 @@ class _TravelSearchScreenState extends State<TravelSearchScreen>
                               ),
                             ),
                             Spacing.height(20),
-                            // TravelListWidget(
-                            //   image: ImageAssets().placeImage4,
-                            //   beauty1: "Water".toUpperCase(),
-                            //   beauty2: "Nature".toUpperCase(),
-                            //   beauty3: "Adventures".toUpperCase(),
-                            //   title: "Forest Waterfalls",
-                            //   location: "Random Forest, Indonesio",
-                            //   star: 4.5,
-                            //   rootContext: context,
-                            // )
                           ],
                         ),
                       ),

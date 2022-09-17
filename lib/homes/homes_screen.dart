@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:provider/provider.dart';
+import 'package:stackit/images.dart';
 import 'package:stackit/utility/app_notifier.dart';
 import 'package:stackit/homes/home_screen_list.dart';
 import 'package:stackit/theme/app_css.dart';
@@ -76,9 +77,8 @@ class _HomeLayout extends State<HomeLayout> {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: <Widget>[
-                          const Image(
-                            image:
-                                AssetImage('assets/images/brand/flutter.png'),
+                          Image(
+                            image: AssetImage(ImageAssets().brand),
                             height: 50,
                             width: 50,
                           ),

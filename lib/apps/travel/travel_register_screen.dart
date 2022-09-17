@@ -20,7 +20,6 @@ class _TravelRegisterScreenState extends State<TravelRegisterScreen> {
   bool agreedToTAC = true;
   bool get isRememberLogin => agreedToTAC;
 
-  // Ubdate method
   setAgreedToTOS(bool newValue) {
     setState(() {
       agreedToTAC = newValue;
@@ -46,7 +45,7 @@ class _TravelRegisterScreenState extends State<TravelRegisterScreen> {
               alignment: Alignment.center,
               width: screenSize.width /
                   (2 / (screenSize.height / screenSize.width)),
-              padding: EdgeInsets.symmetric(horizontal: 25),
+              padding: const EdgeInsets.symmetric(horizontal: 25),
               constraints: const BoxConstraints(maxWidth: 700),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -61,7 +60,7 @@ class _TravelRegisterScreenState extends State<TravelRegisterScreen> {
                       fontSize: 26,
                     ),
                   ),
-                  SizedBox(height: 30),
+                  const SizedBox(height: 30),
                   Text(
                     'Create an account',
                     style: AppCss.getTextStyle(
@@ -71,7 +70,7 @@ class _TravelRegisterScreenState extends State<TravelRegisterScreen> {
                       height: 1.15,
                     ),
                   ),
-                  SizedBox(height: 30),
+                  const SizedBox(height: 30),
                   Form(
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -92,14 +91,9 @@ class _TravelRegisterScreenState extends State<TravelRegisterScreen> {
                             hintStyle: AppCss.getTextStyle(
                               theme.textTheme.bodyText1!,
                             ),
-                            // style: AppCss.getTextStyle(
-                            //   theme.textTheme.bodyText1!,
-                            //   fontWeight: 600,
-                            //   letterSpacing: 0.2,
-                            // ),
                           ),
                         ),
-                        SizedBox(height: 20),
+                        const SizedBox(height: 20),
                         Container(
                           decoration: BoxDecoration(
                             border:
@@ -107,11 +101,6 @@ class _TravelRegisterScreenState extends State<TravelRegisterScreen> {
                             borderRadius: BorderRadius.circular(10),
                           ),
                           child: CustomTextFormField(
-                            // style: AppCss.getTextStyle(
-                            //   theme.textTheme.bodyText1!,
-                            //   fontWeight: 600,
-                            //   letterSpacing: 0.2,
-                            // ),
                             hintStyle: AppCss.getTextStyle(
                               theme.textTheme.bodyText1!,
                             ),
@@ -129,13 +118,9 @@ class _TravelRegisterScreenState extends State<TravelRegisterScreen> {
                               size: 20,
                             ),
                             isDense: true,
-                            // autofocus: false,
-                            // textInputAction: TextInputAction.search,
-                            // textCapitalization: TextCapitalization.sentences,
-                            // obscureText: true,
                           ),
                         ),
-                        SizedBox(height: 20),
+                        const SizedBox(height: 20),
                         Container(
                           decoration: BoxDecoration(
                             border:
@@ -143,11 +128,6 @@ class _TravelRegisterScreenState extends State<TravelRegisterScreen> {
                             borderRadius: BorderRadius.circular(10),
                           ),
                           child: CustomTextFormField(
-                            // style: AppCss.getTextStyle(
-                            //   theme.textTheme.bodyText1!,
-                            //   fontWeight: 600,
-                            //   letterSpacing: 0.2,
-                            // ),
                             hintStyle: AppCss.getTextStyle(
                               theme.textTheme.bodyText1!,
                             ),
@@ -165,15 +145,12 @@ class _TravelRegisterScreenState extends State<TravelRegisterScreen> {
                               size: 20,
                             ),
                             isDense: true,
-                            // autofocus: false,
-                            // textInputAction: TextInputAction.search,
-                            // textCapitalization: TextCapitalization.sentences,
                             obscureText: true,
                           ),
                         ),
-                        SizedBox(height: 50),
+                        const SizedBox(height: 50),
                         Padding(
-                          padding: EdgeInsets.all(0),
+                          padding: const EdgeInsets.all(0),
                           child: CustomButton(
                             title: "Sign up",
                             style: AppCss.getTextStyle(
@@ -185,13 +162,13 @@ class _TravelRegisterScreenState extends State<TravelRegisterScreen> {
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) => TravelScreen(),
+                                  builder: (context) => const TravelScreen(),
                                 ),
                               );
                             },
                           ),
                         ),
-                        SizedBox(height: 30),
+                        const SizedBox(height: 30),
                         RichText(
                           text: TextSpan(
                             text: "Already have account? ",
@@ -213,7 +190,7 @@ class _TravelRegisterScreenState extends State<TravelRegisterScreen> {
                                       context,
                                       MaterialPageRoute(
                                         builder: (context) =>
-                                            TravelLoginScreen(),
+                                            const TravelLoginScreen(),
                                       ),
                                     );
                                   },

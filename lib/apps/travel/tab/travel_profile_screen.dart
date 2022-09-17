@@ -6,7 +6,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_feather_icons/flutter_feather_icons.dart';
 import 'package:provider/provider.dart';
-import 'package:stackit/assets/index.dart';
 import 'package:stackit/global/packages/config_package.dart';
 import 'package:stackit/theme/app_css.dart';
 import 'package:stackit/theme/app_theme.dart';
@@ -71,57 +70,11 @@ class _TravelProfileScreenState extends State<TravelProfileScreen>
       builder: (BuildContext context, AppThemeNotifier? value, Widget? child) {
         return MaterialApp(
           debugShowCheckedModeBanner: false,
-          // theme: AppTheme.getThemeFromThemeMode(value!.themeMode()),
           home: SafeArea(
             child: Scaffold(
               body: ListView(
                 padding: const EdgeInsets.all(24),
                 children: [
-                  // Container(
-                  //   margin: const EdgeInsets.only(top: 16),
-                  //   child: Row(
-                  //     children: <Widget>[
-                  //       Container(
-                  //         width: 64,
-                  //         height: 64,
-                  //         decoration: BoxDecoration(
-                  //           shape: BoxShape.circle,
-                  //           image: DecorationImage(
-                  //               image: AssetImage(imageAssets.avatar4),
-                  //               fit: BoxFit.fill),
-                  //         ),
-                  //       ),
-                  //       // Container(
-                  //       //   margin: const EdgeInsets.only(left: 16),
-                  //       //   child: Column(
-                  //       //     crossAxisAlignment: CrossAxisAlignment.start,
-                  //       //     children: <Widget>[
-                  //       //       Text("Aesha shah",
-                  //       //           style: AppCss.getTextStyle(
-                  //       //               theme.textTheme.subtitle1!,
-                  //       //               fontWeight: 700,
-                  //       //               letterSpacing: 0)),
-                  //       //       Text("aeshashah@shopy.com",
-                  //       //           style: AppCss.getTextStyle(
-                  //       //               theme.textTheme.caption!,
-                  //       //               fontWeight: 600,
-                  //       //               letterSpacing: 0.3)),
-                  //       //     ],
-                  //       //   ),
-                  //       // ),
-                  //       // // Expanded(
-                  //       // //   child: Align(
-                  //       // //     alignment: Alignment.centerRight,
-                  //       // //     child: Icon(
-                  //       // //       MdiIcons.chevronRight,
-                  //       // //       color: theme.colorScheme.onBackground,
-                  //       // //     ),
-                  //       // //   ),
-                  //       // // )
-                  //     ],
-                  //   ),
-                  // ),
-                  // Spacing.height(24),
                   Text(
                     'Settings',
                     style: AppCss.getTextStyle(theme.textTheme.headline6!,
@@ -137,37 +90,27 @@ class _TravelProfileScreenState extends State<TravelProfileScreen>
                   ),
                   Spacing.height(30),
                   singleRow(title: "Notifications", icon: FeatherIcons.bell),
-                  Spacing.height(8),
-                  // Divider(),
-                  // Spacing.height(8),
-                  // singleRow(title: "Edit Profile", icon: FeatherIcons.edit),
-                  // Spacing.height(8),
+                  Spacing.height(10),
                   Divider(),
-                  Spacing.height(8),
+                  Spacing.height(10),
                   singleRow(title: "Language", icon: FeatherIcons.globe),
-                  Spacing.height(8),
+                  Spacing.height(10),
                   Divider(),
-                  Spacing.height(8),
+                  Spacing.height(10),
                   singleRow(title: "Profile setting", icon: FeatherIcons.user),
-                  Spacing.height(8),
-                  // Divider(),
-                  // Spacing.height(8),
-                  // singleRow(
-                  //     title: "Terms & conditions",
-                  //     icon: FeatherIcons.helpCircle),
-                  // Spacing.height(8),
+                  Spacing.height(10),
                   Divider(),
-                  Spacing.height(8),
+                  Spacing.height(10),
                   singleRow(title: "Privacy policy", icon: FeatherIcons.shield),
-                  Spacing.height(8),
+                  Spacing.height(10),
                   Divider(),
-                  Spacing.height(8),
+                  Spacing.height(10),
                   singleRow(title: "About us", icon: FeatherIcons.info),
-                  Spacing.height(8),
+                  Spacing.height(10),
                   Divider(),
-                  Spacing.height(8),
+                  Spacing.height(10),
                   singleRow(title: "Logout", icon: FeatherIcons.logOut),
-                  Spacing.height(8),
+                  Spacing.height(10),
                 ],
               ),
             ),

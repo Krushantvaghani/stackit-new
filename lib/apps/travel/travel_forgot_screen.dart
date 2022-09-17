@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
+import 'package:stackit/images.dart';
 import 'package:stackit/theme/app_css.dart';
 import 'package:stackit/theme/app_theme.dart';
 import 'package:stackit/apps/travel/travel_full_screen.dart';
@@ -58,12 +59,17 @@ class _TravelForgotPasswordState extends State<TravelForgotPassword> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+                const SizedBox(height: 20),
                 Center(
-                  child: Image.asset(
-                    "assets/svg/forgot_password.png",
+                  child: Image(
+                    image: AssetImage(
+                      ImageAssets().forgotPassword,
+                      // ImageAssets().forgotPassword,
+                    ),
+                    fit: BoxFit.fitWidth,
                   ),
                 ),
-                // SizedBox(height: 20),
+                const SizedBox(height: 30),
                 Align(
                   child: Text(
                     "We have sent a password recover instructions to your email",
@@ -78,7 +84,7 @@ class _TravelForgotPasswordState extends State<TravelForgotPassword> {
                 Form(
                   child: Column(
                     children: [
-                      const SizedBox(height: 40),
+                      const SizedBox(height: 30),
                       Container(
                         decoration: BoxDecoration(
                           border:

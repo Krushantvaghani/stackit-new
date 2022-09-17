@@ -8,7 +8,6 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:stackit/apps/travel/travel_details.dart';
 import 'package:stackit/apps/travel/traveler_details.dart';
-import 'package:stackit/assets/index.dart';
 import 'package:stackit/images.dart';
 import 'package:stackit/theme/app_css.dart';
 import 'package:stackit/theme/app_theme.dart';
@@ -67,6 +66,7 @@ class _TravelHomeScreenState extends State<TravelHomeScreen>
               appBar: AppBar(
                 titleSpacing: 0,
                 elevation: 0,
+                // backgroundColor: AppTheme.theme.colorScheme.primary,
                 backgroundColor: AppTheme.theme.cardColor,
                 title: Padding(
                   padding: Spacing.left(24),
@@ -95,7 +95,7 @@ class _TravelHomeScreenState extends State<TravelHomeScreen>
                 child: Column(
                   children: [
                     Container(
-                      margin: Spacing.fromLTRB(24, 15, 24, 15),
+                      margin: Spacing.fromLTRB(24, 20, 24, 20),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         children: [
@@ -150,7 +150,7 @@ class _TravelHomeScreenState extends State<TravelHomeScreen>
                         ],
                       ),
                     ),
-                    Spacing.height(10),
+                    // Spacing.height(10),
                     Padding(
                       padding: Spacing.fromLTRB(24, 0, 0, 0),
                       child: Row(
@@ -166,7 +166,7 @@ class _TravelHomeScreenState extends State<TravelHomeScreen>
                         ],
                       ),
                     ),
-                    Spacing.height(5),
+                    Spacing.height(20),
                     CustomContainer(
                       borderRadius: BorderRadius.circular(10),
                       padding: const EdgeInsets.all(0),
@@ -174,32 +174,45 @@ class _TravelHomeScreenState extends State<TravelHomeScreen>
                       child: SingleChildScrollView(
                         scrollDirection: Axis.horizontal,
                         child: Padding(
-                          padding: Spacing.fromLTRB(24, 0, 24, 0),
+                          padding: Spacing.horizontal(24),
                           child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: [
                               categoryWidget(
                                 iconData: MdiIcons.airplane,
                                 actionText: "Trips",
                                 index: 0,
                               ),
-                              categoryWidget(
-                                  actionText: "Hotel",
-                                  iconData: MdiIcons.cityVariant,
-                                  index: 2),
-                              categoryWidget(
-                                  actionText: "Food",
-                                  iconData: MdiIcons.coffee,
-                                  index: 3),
-                              categoryWidget(
-                                  actionText: "Transport",
-                                  iconData: MdiIcons.rickshaw,
-                                  index: 4),
-                              categoryWidget(
-                                  actionText: "Allocation",
-                                  iconData: MdiIcons.collage,
-                                  index: 5),
                               Container(
+                                margin: Spacing.left(24),
+                                child: categoryWidget(
+                                    actionText: "Hotel",
+                                    iconData: MdiIcons.cityVariant,
+                                    index: 2),
+                              ),
+                              Container(
+                                margin: Spacing.left(24),
+                                child: categoryWidget(
+                                    actionText: "Food",
+                                    iconData: MdiIcons.coffee,
+                                    index: 3),
+                              ),
+                              Container(
+                                margin: Spacing.left(24),
+                                child: categoryWidget(
+                                    actionText: "Transport",
+                                    iconData: MdiIcons.rickshaw,
+                                    index: 4),
+                              ),
+                              Container(
+                                margin: Spacing.left(24),
+                                child: categoryWidget(
+                                    actionText: "Allocation",
+                                    iconData: MdiIcons.collage,
+                                    index: 5),
+                              ),
+                              Container(
+                                margin: Spacing.left(24),
                                 child: categoryWidget(
                                     actionText: "Train",
                                     iconData: MdiIcons.train,
@@ -210,7 +223,7 @@ class _TravelHomeScreenState extends State<TravelHomeScreen>
                         ),
                       ),
                     ),
-                    Spacing.height(24),
+                    Spacing.height(20),
                     Padding(
                       padding: Spacing.horizontal(24),
                       child: Row(
@@ -295,7 +308,7 @@ class _TravelHomeScreenState extends State<TravelHomeScreen>
                             ),
                           ),
                           Container(
-                            margin: Spacing.fromLTRB(24, 0, 24, 0),
+                            margin: Spacing.horizontal(24),
                             child: nearbyTravelers(
                               image: ImageAssets().travelers5,
                               title: "Tyler Retriever",
@@ -308,7 +321,7 @@ class _TravelHomeScreenState extends State<TravelHomeScreen>
                         ],
                       ),
                     ),
-                    Spacing.height(24),
+                    Spacing.height(20),
                     Padding(
                       padding: Spacing.horizontal(24),
                       child: Row(
@@ -433,64 +446,62 @@ class _TravelHomeScreenState extends State<TravelHomeScreen>
   Widget categoryWidget(
       {IconData? iconData, required String actionText, int? index}) {
     bool isSelected = (selectedCategory == index);
-    return Container(
-      margin: Spacing.fromLTRB(0, 8, 12, 8),
-      child: Column(
-        children: <Widget>[
-          InkWell(
-            onTap: () {
-              if (!isSelected) {
-                setState(() {
-                  selectedCategory = index;
-                });
-              }
-            },
-            child: Container(
-              decoration: BoxDecoration(
-                  boxShadow: isSelected
-                      ? [
-                          BoxShadow(
-                              color:
-                                  themeData.colorScheme.primary.withAlpha(80),
-                              blurRadius: 6,
-                              spreadRadius: 1,
-                              offset: const Offset(0, 2))
-                        ]
-                      : []),
-              child: ClipRRect(
-                borderRadius: const BorderRadius.all(Radius.circular(10)),
-                child: Material(
-                  color: isSelected
-                      ? themeData.primaryColor
-                      : themeData.backgroundColor,
-                  child: SizedBox(
-                    width: 60,
-                    height: 60,
-                    child: Icon(
-                      iconData,
-                      size: 30,
-                      color: isSelected
-                          ? themeData.colorScheme.onPrimary
-                          : themeData.colorScheme.primary,
-                    ),
+    return Column(
+      children: <Widget>[
+        InkWell(
+          onTap: () {
+            if (!isSelected) {
+              setState(() {
+                selectedCategory = index;
+              });
+            }
+          },
+          child: Container(
+            decoration: BoxDecoration(
+                boxShadow: isSelected
+                    ? [
+                        BoxShadow(
+                            color: themeData.colorScheme.primary.withAlpha(80),
+                            blurRadius: 6,
+                            spreadRadius: 1,
+                            offset: const Offset(0, 2))
+                      ]
+                    : []),
+            child: ClipRRect(
+              borderRadius: const BorderRadius.all(Radius.circular(10)),
+              child: Material(
+                color: isSelected
+                    ? themeData.primaryColor
+                    : themeData.backgroundColor,
+                child: SizedBox(
+                  width: 60,
+                  height: 60,
+                  child: Icon(
+                    iconData,
+                    size: 30,
+                    color: isSelected
+                        ? themeData.colorScheme.onPrimary
+                        : themeData.colorScheme.primary,
                   ),
                 ),
               ),
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.only(top: 8),
-            child: Text(
-              actionText,
-              style: AppCss.getTextStyle(
-                themeData.textTheme.bodyText2!,
-                fontWeight: 700,
-                letterSpacing: 0,
-              ),
+        ),
+        Padding(
+          padding: const EdgeInsets.only(top: 8),
+          child: Text(
+            actionText,
+            style: AppCss.getTextStyle(
+              themeData.textTheme.bodyText2!,
+              fontWeight: 700,
+              letterSpacing: 0,
             ),
-          )
-        ],
-      ),
+            overflow: TextOverflow.ellipsis,
+            // overflow: TextOverflow.ellipsis,
+          ),
+        )
+      ],
     );
   }
 

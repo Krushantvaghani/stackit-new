@@ -62,6 +62,7 @@ flutter:
   assets:
     - assets/
     - assets/icons/
+    - assets/images/
     - assets/images/brand/
     - assets/images/travels/
     - assets/images/travels/recommended/

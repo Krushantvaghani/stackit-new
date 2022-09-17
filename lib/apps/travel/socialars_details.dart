@@ -203,64 +203,6 @@ class _SocialarDetailsState extends State<SocialarDetails>
                               // fit: BoxFit.fitWidth,
                             ),
                           ),
-                          // Column(
-                          //   children: [
-                          //     Row(
-                          //       children: [
-                          //         ClipRRect(
-                          //           borderRadius: const BorderRadius.all(
-                          //             Radius.circular(10),
-                          //           ),
-                          //           child: Image(
-                          //             image: AssetImage(widget.sliderImage2),
-                          //             fit: BoxFit.cover,
-                          //             height: 100,
-                          //           ),
-                          //         ),
-                          //         Spacing.width(20),
-                          //         ClipRRect(
-                          //           borderRadius: const BorderRadius.all(
-                          //             Radius.circular(10),
-                          //           ),
-                          //           child: Image(
-                          //             image: AssetImage(widget.sliderImage3),
-                          //             fit: BoxFit.cover,
-                          //             width: 100,
-                          //             height: 100,
-                          //           ),
-                          //         ),
-                          //       ],
-                          //     ),
-                          //     Spacing.height(20),
-                          //     Row(
-                          //       children: [
-                          //         ClipRRect(
-                          //           borderRadius: const BorderRadius.all(
-                          //             Radius.circular(10),
-                          //           ),
-                          //           child: Image(
-                          //             image: AssetImage(widget.sliderImage2),
-                          //             fit: BoxFit.cover,
-                          //             width: 100,
-                          //             height: 100,
-                          //           ),
-                          //         ),
-                          //         Spacing.width(20),
-                          //         ClipRRect(
-                          //           borderRadius: const BorderRadius.all(
-                          //             Radius.circular(10),
-                          //           ),
-                          //           child: Image(
-                          //             image: AssetImage(widget.sliderImage3),
-                          //             fit: BoxFit.cover,
-                          //             width: 100,
-                          //             height: 100,
-                          //           ),
-                          //         ),
-                          //       ],
-                          //     ),
-                          //   ],
-                          // ),
                         ],
                       ),
                       Spacing.height(20),
